@@ -1,0 +1,113 @@
+# Content for the single-page homepage (_layouts/home.liquid).
+# Name comes from first_name / middle_name / last_name in _config.yml.
+# Images are relative to assets/img/. Icons are Font Awesome 6 classes (https://fontawesome.com/icons).
+
+profile:
+  image: prof_pic.jpg
+  badge: PhD Student
+  tags:
+    - { icon: fas fa-graduation-cap, text: Your University }
+    - { icon: fas fa-brain, text: Machine Learning }
+    - { icon: fas fa-eye, text: Computer Vision }
+    - { icon: fas fa-robot, text: Robotics }
+  # The bio text itself is the body of _pages/about.md.
+  # Optional highlighted call-out under the bio. Leave empty to hide.
+  callout: >
+    I am open to <strong>research collaborations</strong> and <strong>internship opportunities</strong>.
+    Feel free to drop me an email!
+
+socials:
+  - { title: Email, icon: fas fa-envelope, url: "mailto:you@example.com", color: "#EA4335" }
+  - { title: GitHub, icon: fab fa-github, url: "https://github.com/Sara-Tan", color: "#333333" }
+  - { title: LinkedIn, icon: fab fa-linkedin-in, url: "https://www.linkedin.com/in/your-username", color: "#0A66C2" }
+  - { title: Google Scholar, icon: fab fa-google-scholar, url: "https://scholar.google.com/citations?user=qc6CJjYAAAAJ", color: "#4285F4" }
+  - { title: X / Twitter, icon: fab fa-x-twitter, url: "https://x.com/your-handle", color: "#1DA1F2" }
+
+# Navbar CV link. Use a site path (e.g. /cv/) or a PDF (e.g. /assets/pdf/cv.pdf). Leave empty to hide.
+cv_url: /cv/
+
+# Number of news items shown before "Show More".
+news_visible: 5
+news:
+  - { icon: "🎉", date: Sep 2026, text: 'Paper on <span class="highlight">your topic</span> accepted at <span class="venue">NeurIPS 2026</span>!' }
+  - { icon: "🚀", date: Jun 2026, text: 'Started a research internship at <a href="#">Company</a>.' }
+  - { icon: "🏆", date: Mar 2026, text: "Received the Best Paper Award at Some Workshop!" }
+  - { icon: "🎤", date: Jan 2026, text: "Invited talk at Some Seminar." }
+  - { icon: "👩‍🎓", date: Sep 2025, text: "Started my PhD at Your University!" }
+  - { icon: "😎", date: May 2025, text: 'Paper on <span class="highlight">another topic</span> accepted at <span class="venue">CVPR 2025</span>!' }
+
+# Publications are shown as a horizontal card slider.
+# authors: HTML allowed; wrap your own name in <span class="me">...</span>.
+# idea: optional one-line summary shown when hovering/tapping the lightbulb.
+publications:
+  - title: "A Great Paper Title: Something About Brownian Motion"
+    venue: NeurIPS 2026
+    image: publication_preview/brownian-motion.gif
+    authors: '<span class="me">Sara Tan</span>, Coauthor One, Coauthor Two'
+    idea: One-sentence summary of the main idea of this paper.
+    links:
+      - { name: Paper, icon: fas fa-file-pdf, url: "https://arxiv.org/" }
+      - { name: Web, icon: fas fa-globe, url: "#" }
+      - { name: Code, icon: fab fa-github, url: "https://github.com/" }
+    bibtex: |
+      @inproceedings{tan2026great,
+        title={A Great Paper Title},
+        author={Tan, Sara and One, Coauthor and Two, Coauthor},
+        booktitle={NeurIPS},
+        year={2026}
+      }
+  - title: "Another Paper on Wave Mechanics"
+    venue: CVPR 2025
+    image: publication_preview/wave-mechanics.gif
+    authors: 'Coauthor One<sup>*</sup>, <span class="me">Sara Tan</span><sup>*</sup>, Coauthor Two'
+    note: "* Equal contribution"
+    links:
+      - { name: Paper, icon: fas fa-file-pdf, url: "https://arxiv.org/" }
+      - { name: Code, icon: fab fa-github, url: "https://github.com/" }
+      - { name: Poster, icon: fas fa-file-powerpoint, url: "#" }
+    bibtex: |
+      @inproceedings{one2025another,
+        title={Another Paper on Wave Mechanics},
+        author={One, Coauthor and Tan, Sara and Two, Coauthor},
+        booktitle={CVPR},
+        year={2025}
+      }
+  - title: "An Earlier Workshop Paper"
+    venue: ICCV Workshop 2024
+    image: prof_pic_color.png
+    authors: '<span class="me">Sara Tan</span>, Advisor Name'
+    links:
+      - { name: Paper, icon: fas fa-file-pdf, url: "https://arxiv.org/" }
+
+# Experience timeline (most recent first). logo is optional (falls back to icon).
+experience:
+  - title: Research Intern
+    org: Company Name
+    url: "https://example.com"
+    logo:
+    icon: fas fa-building
+    period: Jun 2026 - Present
+    current: true
+    desc: Topic A, Topic B
+  - title: PhD Student
+    org: Your University
+    url: "https://example.com"
+    icon: fas fa-graduation-cap
+    period: Sep 2025 - Present
+    desc: Advisor Name, Research Lab
+  - title: Undergraduate Researcher
+    org: Some University
+    url: "https://example.com"
+    icon: fas fa-flask
+    period: 2023 - 2025
+    desc: Topic C, Topic D
+
+awards:
+  - { icon: "🏆", date: Mar 2026, text: "Best Paper Award, Some Workshop" }
+  - { icon: "🎁", date: Sep 2025, text: 'University Graduate Fellowship (<a href="#">link</a>)' }
+  - { icon: "🥇", date: May 2025, text: "Dean's List, Some University" }
+
+# Number of blog posts per page in the Blog section (posts come from _posts/).
+blog_per_page: 4
+
+footer: Built with <i class="fas fa-heart"></i> using Jekyll.

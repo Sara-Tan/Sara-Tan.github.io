@@ -1,0 +1,314 @@
+{% assign home = site.data.home %}
+{% capture full_name %}{{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}{% endcapture %}
+{% capture short_name %}{{ site.first_name }} {{ site.last_name }}{% endcapture %}
+{% if home.profile.image %}
+  {% assign profile_img = home.profile.image | prepend: '/assets/img/' | relative_url %}
+{% endif %}
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <head>
+    {% include metadata.liquid %}
+    {% if site.icon.size <= 4 %}
+      <link
+        rel="shortcut icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>{{ site.icon }}</text></svg>"
+      >
+    {% elsif site.icon != blank %}
+      <link rel="shortcut icon" href="{{ site.icon | prepend: '/assets/img/' | relative_url | bust_file_cache }}">
+    {% endif %}
+    <link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url | bust_css_cache }}">
+    <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+    <script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        var dark = t === 'dark' || ((!t || t === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      })();
+    </script>
+  </head>
+
+  <body class="home-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar" aria-label="Primary">
+      <div class="navbar-container">
+        <a href="#home" class="navbar-logo" aria-label="{{ short_name }} home">
+          {% if profile_img %}<img class="navbar-logo-image" src="{{ profile_img }}" alt="">{% endif %}
+          <span>{{ short_name }}</span>
+        </a>
+
+        <button class="navbar-toggle" id="navbarToggle" type="button" aria-label="Open navigation menu" aria-controls="navbarMenu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="navbar-menu" id="navbarMenu">
+          <div class="navbar-mobile-header">
+            {% if profile_img %}<img src="{{ profile_img }}" alt="">{% endif %}
+            <div>
+              <strong>{{ short_name }}</strong>
+              <span>{{ home.profile.badge }}</span>
+            </div>
+            <button class="navbar-close" id="navbarClose" type="button" aria-label="Close navigation menu">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          {% if home.news.size > 0 %}<a href="#news" class="navbar-link"><i class="fas fa-rss"></i> News</a>{% endif %}
+          {% if home.publications.size > 0 %}<a href="#publications" class="navbar-link"><i class="fas fa-file-alt"></i> Publications</a>{% endif %}
+          {% if home.experience.size > 0 %}<a href="#experience" class="navbar-link"><i class="fas fa-briefcase"></i> Experience</a>{% endif %}
+          {% if home.awards.size > 0 %}<a href="#awards" class="navbar-link"><i class="fas fa-trophy"></i> Awards</a>{% endif %}
+          {% if site.posts.size > 0 %}<a href="#blog" class="navbar-link"><i class="fas fa-pen-fancy"></i> Blog</a>{% endif %}
+          {% if home.cv_url %}
+            <a href="{{ home.cv_url | relative_url }}" class="navbar-link"><i class="fas fa-file-lines"></i> CV</a>
+          {% endif %}
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="navbar-overlay" id="navbarOverlay"></div>
+
+    <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+
+    <main class="main-container" id="main-content">
+      <!-- Intro -->
+      <section class="glass-card" id="home">
+        <div class="profile-container">
+          <div class="profile-media">
+            {% if profile_img %}
+              <div class="profile-image-wrapper">
+                <img class="profile-image" src="{{ profile_img }}" alt="{{ short_name }}">
+              </div>
+            {% endif %}
+            <div class="social-links">
+              {% for s in home.socials %}
+                <a href="{{ s.url }}" class="social-link" title="{{ s.title }}" aria-label="{{ s.title }}" style="--hover-color: {{ s.color | default: 'var(--accent)' }};" {% unless s.url contains 'mailto:' %}target="_blank" rel="noopener noreferrer"{% endunless %}>
+                  <i class="{{ s.icon }}"></i>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="profile-content">
+            <div>
+              <h1 class="profile-name">{{ full_name }}</h1>
+              {% if home.profile.badge %}<span class="profile-badge">{{ home.profile.badge }}</span>{% endif %}
+            </div>
+            {% if home.profile.tags %}
+              <div class="profile-tags">
+                {% for tag in home.profile.tags %}
+                  <span class="tag">{% if tag.icon %}<i class="{{ tag.icon }}"></i> {% endif %}{{ tag.text }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+            <div class="profile-description">{{ content }}</div>
+            {% if home.profile.callout and home.profile.callout != '' %}
+              <p class="profile-callout">
+                <i class="fas fa-bullhorn" aria-hidden="true"></i>
+                <span>{{ home.profile.callout }}</span>
+              </p>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+
+      <!-- News -->
+      {% if home.news.size > 0 %}
+        {% assign news_visible = home.news_visible | default: 5 %}
+        <section class="glass-card" id="news">
+          <div class="section-header">
+            <div class="icon-wrapper"><i class="fas fa-bullhorn"></i></div>
+            <h2>Latest News</h2>
+          </div>
+          <div class="news-list" id="newsList">
+            {% for item in home.news %}
+              <div class="news-item{% if forloop.index > news_visible %} is-hidden{% endif %}">
+                <span class="news-icon">{{ item.icon }}</span>
+                <span class="news-date">{{ item.date }}</span>
+                <span class="news-text">{{ item.text }}</span>
+              </div>
+            {% endfor %}
+          </div>
+          {% if home.news.size > news_visible %}
+            <div class="show-more-container">
+              <button type="button" class="show-more-btn" id="newsToggle" aria-expanded="false" aria-controls="newsList">
+                <i class="fas fa-chevron-down"></i> <span>Show More</span>
+              </button>
+            </div>
+          {% endif %}
+        </section>
+      {% endif %}
+
+      <!-- Publications -->
+      {% if home.publications.size > 0 %}
+        <section class="glass-card" id="publications">
+          <div class="section-header">
+            <div class="icon-wrapper"><i class="fas fa-scroll"></i></div>
+            <h2>Publications</h2>
+            <div class="slider-controls">
+              <button type="button" class="slider-btn" id="pubPrev" aria-label="Previous publications" aria-controls="pubSlider">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button type="button" class="slider-btn" id="pubNext" aria-label="Next publications" aria-controls="pubSlider">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="pub-hint">
+            <span><i class="fas fa-lightbulb"></i> Hover or tap the lightbulb beside author names to see the main idea</span>
+            <span class="pub-count"><i class="fas fa-file-alt"></i> {{ home.publications.size }} publications</span>
+          </div>
+
+          <div class="pub-slider" id="pubSlider" tabindex="0" role="region" aria-label="Publications carousel">
+            {% for pub in home.publications %}
+              <article class="pub-card">
+                {% if pub.venue %}<span class="pub-venue">{{ pub.venue }}</span>{% endif %}
+                {% if pub.image %}
+                  <img class="pub-image" src="{{ pub.image | prepend: '/assets/img/' | relative_url }}" alt="{{ pub.title | escape }}" loading="lazy">
+                {% endif %}
+                <div class="pub-content">
+                  <h3 class="pub-title">{{ pub.title }}</h3>
+                  <div class="pub-authors">
+                    {{ pub.authors }}
+                    {% if pub.idea %}
+                      <span class="idea-tooltip" tabindex="0" role="button" aria-label="Show main idea">
+                        <span class="idea-icon">💡</span>
+                        <span class="tooltip-text" role="tooltip">{{ pub.idea }}</span>
+                      </span>
+                    {% endif %}
+                    {% if pub.note %}<span class="pub-note">{{ pub.note }}</span>{% endif %}
+                  </div>
+                  <div class="pub-links">
+                    {% for link in pub.links %}
+                      <a href="{{ link.url }}" class="pub-link" target="_blank" rel="noopener noreferrer">
+                        {% if link.icon %}<i class="{{ link.icon }}"></i> {% endif %}{{ link.name }}
+                      </a>
+                    {% endfor %}
+                    {% if pub.bibtex %}
+                      <button type="button" class="pub-link cite-btn"><i class="fas fa-quote-right"></i> Cite</button>
+                      <pre class="bibtex-source" hidden>{{ pub.bibtex | strip | escape }}</pre>
+                    {% endif %}
+                  </div>
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+
+          <div class="slider-progress"><div class="progress-bar" id="pubProgress"></div></div>
+          <div class="slider-dots" id="pubDots" aria-label="Publication shortcuts"></div>
+        </section>
+      {% endif %}
+
+      <!-- Experience -->
+      {% if home.experience.size > 0 %}
+        <section class="glass-card" id="experience">
+          <div class="section-header">
+            <div class="icon-wrapper"><i class="fas fa-laptop-code"></i></div>
+            <h2>Experience</h2>
+          </div>
+          <div class="experience-timeline">
+            {% for exp in home.experience %}
+              <article class="experience-item{% if exp.current %} is-current{% endif %}">
+                <div class="experience-marker" aria-hidden="true"><span></span></div>
+                <div class="experience-card">
+                  <div class="experience-header">
+                    <div class="experience-logo">
+                      {% if exp.logo %}
+                        <img src="{{ exp.logo | prepend: '/assets/img/' | relative_url }}" alt="{{ exp.org | escape }}">
+                      {% else %}
+                        <i class="{{ exp.icon | default: 'fas fa-briefcase' }}"></i>
+                      {% endif %}
+                    </div>
+                    <div>
+                      <div class="experience-period">
+                        {{ exp.period }}
+                        {% if exp.current %}<span class="experience-current">Current</span>{% endif %}
+                      </div>
+                      <h3 class="experience-title">{{ exp.title }}</h3>
+                      {% if exp.url %}
+                        <a class="experience-org" href="{{ exp.url }}" target="_blank" rel="noopener noreferrer">{{ exp.org }}</a>
+                      {% else %}
+                        <span class="experience-org">{{ exp.org }}</span>
+                      {% endif %}
+                    </div>
+                  </div>
+                  {% if exp.desc %}<p class="experience-desc">{{ exp.desc }}</p>{% endif %}
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+
+      <!-- Awards -->
+      {% if home.awards.size > 0 %}
+        <section class="glass-card" id="awards">
+          <div class="section-header">
+            <div class="icon-wrapper"><i class="fas fa-medal"></i></div>
+            <h2>Awards &amp; Honors</h2>
+          </div>
+          <div class="award-list">
+            {% for award in home.awards %}
+              <div class="award-item">
+                <span class="award-icon">{{ award.icon }}</span>
+                <span class="award-date">{{ award.date }}</span>
+                <span class="award-text">{{ award.text }}</span>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+
+      <!-- Blog -->
+      {% if site.posts.size > 0 %}
+        <section class="glass-card" id="blog">
+          <div class="section-header">
+            <div class="icon-wrapper"><i class="fas fa-pen-fancy"></i></div>
+            <h2>Blog Posts</h2>
+            <a class="section-more" href="{{ '/blog/' | relative_url }}">All posts <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="blog-list" id="blogList" data-per-page="{{ home.blog_per_page | default: 4 }}">
+            {% for post in site.posts %}
+              {% if post.redirect == blank %}
+                {% assign post_url = post.url | relative_url %}
+              {% elsif post.redirect contains '://' %}
+                {% assign post_url = post.redirect %}
+              {% else %}
+                {% assign post_url = post.redirect | relative_url %}
+              {% endif %}
+              <a class="blog-item" href="{{ post_url }}">
+                <span class="blog-date">{{ post.date | date: '%b %d, %Y' }}</span>
+                <span class="blog-title">{{ post.title }}</span>
+                {% if post.description %}<span class="blog-desc">{{ post.description }}</span>{% endif %}
+              </a>
+            {% endfor %}
+          </div>
+          <div class="blog-pagination" id="blogPagination">
+            <button type="button" class="pagination-btn" id="blogPrev"><i class="fas fa-chevron-left"></i> Previous</button>
+            <span class="pagination-info" id="blogPageInfo"></span>
+            <button type="button" class="pagination-btn" id="blogNext">Next <i class="fas fa-chevron-right"></i></button>
+          </div>
+        </section>
+      {% endif %}
+
+      <footer class="footer">
+        &copy; {{ 'now' | date: '%Y' }} {{ short_name }}{% if home.footer %} &bull; {{ home.footer }}{% endif %}
+      </footer>
+    </main>
+
+    <!-- BibTeX dialog -->
+    <dialog class="cite-dialog" id="citeDialog" aria-labelledby="citeDialogTitle">
+      <div class="cite-dialog-header">
+        <h3 id="citeDialogTitle">BibTeX</h3>
+        <button type="button" class="cite-close" id="citeClose" aria-label="Close"><i class="fas fa-times"></i></button>
+      </div>
+      <pre id="citeText"></pre>
+      <button type="button" class="pub-link" id="citeCopy"><i class="fas fa-copy"></i> <span>Copy</span></button>
+    </dialog>
+
+    <script src="{{ '/assets/js/home.js' | relative_url | bust_file_cache }}"></script>
+  </body>
+</html>
