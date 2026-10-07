@@ -1,13 +1,9 @@
 ---
 ---
+
 @charset "utf-8";
 
-@import
-  "font-awesome/fontawesome",
-  "font-awesome/brands",
-  "font-awesome/solid",
-  "font-awesome/regular"
-;
+@import "font-awesome/fontawesome", "font-awesome/brands", "font-awesome/solid", "font-awesome/regular";
 
 /* ---------- Theme ---------- */
 :root {
@@ -60,16 +56,24 @@ html {
 body.home-page {
   margin: 0;
   min-height: 100vh;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   font-size: 16px;
   line-height: 1.65;
   color: var(--text);
-  background:
-    radial-gradient(circle at 10% 0%, var(--bg-grad-1), transparent 45%),
-    radial-gradient(circle at 90% 30%, var(--bg-grad-2), transparent 40%),
-    var(--bg);
+  background: radial-gradient(circle at 10% 0%, var(--bg-grad-1), transparent 45%),
+    radial-gradient(circle at 90% 30%, var(--bg-grad-2), transparent 40%), var(--bg);
   background-attachment: fixed;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 a {
@@ -581,7 +585,9 @@ html[data-theme="dark"] .theme-toggle .fa-moon {
   border-radius: 16px;
   background: var(--card-solid);
   box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .pub-card:hover {
@@ -880,7 +886,9 @@ html[data-theme="dark"] .theme-toggle .fa-moon {
   color: var(--text);
   background: var(--card-solid);
   box-shadow: var(--shadow);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .blog-item:hover {

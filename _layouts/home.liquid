@@ -38,7 +38,14 @@
           <span>{{ short_name }}</span>
         </a>
 
-        <button class="navbar-toggle" id="navbarToggle" type="button" aria-label="Open navigation menu" aria-controls="navbarMenu" aria-expanded="false">
+        <button
+          class="navbar-toggle"
+          id="navbarToggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="navbarMenu"
+          aria-expanded="false"
+        >
           <i class="fas fa-bars"></i>
         </button>
 
@@ -53,11 +60,21 @@
               <i class="fas fa-times"></i>
             </button>
           </div>
-          {% if home.news.size > 0 %}<a href="#news" class="navbar-link"><i class="fas fa-rss"></i> News</a>{% endif %}
-          {% if home.publications.size > 0 %}<a href="#publications" class="navbar-link"><i class="fas fa-file-alt"></i> Publications</a>{% endif %}
-          {% if home.experience.size > 0 %}<a href="#experience" class="navbar-link"><i class="fas fa-briefcase"></i> Experience</a>{% endif %}
-          {% if home.awards.size > 0 %}<a href="#awards" class="navbar-link"><i class="fas fa-trophy"></i> Awards</a>{% endif %}
-          {% if site.posts.size > 0 %}<a href="#blog" class="navbar-link"><i class="fas fa-pen-fancy"></i> Blog</a>{% endif %}
+          {% if home.news.size > 0 -%}
+            <a href="#news" class="navbar-link"><i class="fas fa-rss"></i> News</a>
+          {%- endif %}
+          {% if home.publications.size > 0 -%}
+            <a href="#publications" class="navbar-link"><i class="fas fa-file-alt"></i> Publications</a>
+          {%- endif %}
+          {% if home.experience.size > 0 -%}
+            <a href="#experience" class="navbar-link"><i class="fas fa-briefcase"></i> Experience</a>
+          {%- endif %}
+          {% if home.awards.size > 0 -%}
+            <a href="#awards" class="navbar-link"><i class="fas fa-trophy"></i> Awards</a>
+          {%- endif %}
+          {% if site.posts.size > 0 -%}
+            <a href="#blog" class="navbar-link"><i class="fas fa-pen-fancy"></i> Blog</a>
+          {%- endif %}
           {% if home.cv_url %}
             <a href="{{ home.cv_url | relative_url }}" class="navbar-link"><i class="fas fa-file-lines"></i> CV</a>
           {% endif %}
@@ -84,7 +101,16 @@
             {% endif %}
             <div class="social-links">
               {% for s in home.socials %}
-                <a href="{{ s.url }}" class="social-link" title="{{ s.title }}" aria-label="{{ s.title }}" style="--hover-color: {{ s.color | default: 'var(--accent)' }};" {% unless s.url contains 'mailto:' %}target="_blank" rel="noopener noreferrer"{% endunless %}>
+                <a
+                  href="{{ s.url }}"
+                  class="social-link"
+                  title="{{ s.title }}"
+                  aria-label="{{ s.title }}"
+                  style="--hover-color: {{ s.color | default: 'var(--accent)' }};"
+                  {% unless s.url contains 'mailto:' %}
+                    target="_blank" rel="noopener noreferrer"
+                  {% endunless %}
+                >
                   <i class="{{ s.icon }}"></i>
                 </a>
               {% endfor %}
@@ -94,12 +120,17 @@
           <div class="profile-content">
             <div>
               <h1 class="profile-name">{{ full_name }}</h1>
-              {% if home.profile.badge %}<span class="profile-badge">{{ home.profile.badge }}</span>{% endif %}
+              {% if home.profile.badge -%}
+                <span class="profile-badge">{{ home.profile.badge }}</span>
+              {%- endif %}
             </div>
             {% if home.profile.tags %}
               <div class="profile-tags">
                 {% for tag in home.profile.tags %}
-                  <span class="tag">{% if tag.icon %}<i class="{{ tag.icon }}"></i> {% endif %}{{ tag.text }}</span>
+                  <span class="tag">
+                    {%- if tag.icon %}<i class="{{ tag.icon }}"></i> {% endif -%}
+                    {{- tag.text -}}
+                  </span>
                 {% endfor %}
               </div>
             {% endif %}
@@ -165,7 +196,9 @@
           <div class="pub-slider" id="pubSlider" tabindex="0" role="region" aria-label="Publications carousel">
             {% for pub in home.publications %}
               <article class="pub-card">
-                {% if pub.venue %}<span class="pub-venue">{{ pub.venue }}</span>{% endif %}
+                {% if pub.venue -%}
+                  <span class="pub-venue">{{ pub.venue }}</span>
+                {%- endif %}
                 {% if pub.image %}
                   <img class="pub-image" src="{{ pub.image | prepend: '/assets/img/' | relative_url }}" alt="{{ pub.title | escape }}" loading="lazy">
                 {% endif %}
@@ -179,12 +212,15 @@
                         <span class="tooltip-text" role="tooltip">{{ pub.idea }}</span>
                       </span>
                     {% endif %}
-                    {% if pub.note %}<span class="pub-note">{{ pub.note }}</span>{% endif %}
+                    {% if pub.note -%}
+                      <span class="pub-note">{{ pub.note }}</span>
+                    {%- endif %}
                   </div>
                   <div class="pub-links">
                     {% for link in pub.links %}
                       <a href="{{ link.url }}" class="pub-link" target="_blank" rel="noopener noreferrer">
-                        {% if link.icon %}<i class="{{ link.icon }}"></i> {% endif %}{{ link.name }}
+                        {% if link.icon %}<i class="{{ link.icon }}"></i> {% endif -%}
+                        {{- link.name }}
                       </a>
                     {% endfor %}
                     {% if pub.bibtex %}
@@ -225,7 +261,9 @@
                     <div>
                       <div class="experience-period">
                         {{ exp.period }}
-                        {% if exp.current %}<span class="experience-current">Current</span>{% endif %}
+                        {% if exp.current -%}
+                          <span class="experience-current">Current</span>
+                        {%- endif %}
                       </div>
                       <h3 class="experience-title">{{ exp.title }}</h3>
                       {% if exp.url %}
@@ -235,7 +273,9 @@
                       {% endif %}
                     </div>
                   </div>
-                  {% if exp.desc %}<p class="experience-desc">{{ exp.desc }}</p>{% endif %}
+                  {% if exp.desc %}
+                    <p class="experience-desc">{{ exp.desc }}</p>
+                  {% endif %}
                 </div>
               </article>
             {% endfor %}
@@ -282,7 +322,9 @@
               <a class="blog-item" href="{{ post_url }}">
                 <span class="blog-date">{{ post.date | date: '%b %d, %Y' }}</span>
                 <span class="blog-title">{{ post.title }}</span>
-                {% if post.description %}<span class="blog-desc">{{ post.description }}</span>{% endif %}
+                {% if post.description -%}
+                  <span class="blog-desc">{{ post.description }}</span>
+                {%- endif %}
               </a>
             {% endfor %}
           </div>
@@ -295,7 +337,9 @@
       {% endif %}
 
       <footer class="footer">
-        &copy; {{ 'now' | date: '%Y' }} {{ short_name }}{% if home.footer %} &bull; {{ home.footer }}{% endif %}
+        &copy; {{ 'now' | date: '%Y' }}
+        {{ short_name -}}
+        {%- if home.footer %} &bull; {{ home.footer }}{% endif %}
       </footer>
     </main>
 
