@@ -50,7 +50,7 @@ html[data-theme="dark"] {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--nav-h) + 16px);
+  scroll-padding-top: 80px;
 }
 
 body.home-page {
@@ -265,7 +265,8 @@ html[data-theme="dark"] .theme-toggle .fa-moon {
 .main-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: calc(var(--nav-h) + 28px) 20px 40px;
+  // Navbar height (64px) + 28px; avoid calc(a + b): the site minifier strips its spaces.
+  padding: 92px 20px 40px;
   display: flex;
   flex-direction: column;
   gap: 28px;
@@ -688,7 +689,8 @@ html[data-theme="dark"] .theme-toggle .fa-moon {
 
 .tooltip-text {
   position: absolute;
-  bottom: calc(100% + 8px);
+  bottom: 100%;
+  margin-bottom: 8px;
   left: 50%;
   z-index: 10;
   width: 240px;
