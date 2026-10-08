@@ -26,26 +26,43 @@ cv_url:
 # Number of news items shown before "Show More".
 news_visible: 5
 news:
-  - {
-      icon: "🎉",
-      date: 2026,
-      text: 'Paper on <span class="highlight">test-time self-distillation for LLM reasoning</span> accepted at the <span class="venue">NeurIPS 2026 TTLC Workshop</span>!',
-    }
-  - { icon: "🚀", date: 2025, text: "Joined Huawei Technologies R&D UK as an AI Technical Engineer." }
-  - {
-      icon: "😎",
-      date: 2025,
-      text: 'Paper on <span class="highlight">tissue shear and planar polarity</span> published in <span class="venue">Nature Communications</span>!',
-    }
-  - { icon: "🏆", date: 2022, text: "Received the Women Academic Researcher Award (2022–2023)." }
-  - {
-      icon: "😎",
-      date: 2022,
-      text: 'Paper on <span class="highlight">planar polarization mechanisms</span> published in <span class="venue">Cell Reports</span>!',
-    }
-  - { icon: "🔬", date: 2021, text: "Started a Wellcome Trust-funded Postdoctoral Research Fellowship at the University of Sheffield." }
-  - { icon: "🛠️", date: 2021, text: 'Released <span class="highlight">QuantifyPolarity</span>, published in <span class="venue">Development</span>.' }
-  - { icon: "👩‍🎓", date: 2020, text: "Awarded my PhD in Biomedical Science from the University of Sheffield!" }
+  - icon: "📄"
+    date: 2026
+    text: >-
+      Our paper <a href="https://arxiv.org/abs/2609.37041"><em>Beam Search as Test-Time Self-Distillation via Counterfactual Contexts</em></a>
+      has been accepted at the <span class="venue">NeurIPS 2026 Workshop on Towards Test-Time Continual Learning Agents</span>.
+  - icon: "💼"
+    date: 2025
+    text: >-
+      Joined <span class="highlight">Huawei Technologies R&amp;D UK</span> as an AI Technical Engineer, working on inference-time LLM reasoning
+      and multi-agent systems.
+  - icon: "📄"
+    date: 2025
+    text: >-
+      First-author paper <a href="https://doi.org/10.1038/s41467-025-56744-7"><em>Tissue shear as a cue for aligning planar polarity in the
+      developing Drosophila wing</em></a> published in <span class="venue">Nature Communications</span>.
+  - icon: "🏆"
+    date: 2022
+    text: Received the <span class="highlight">Women Academic Researcher Award</span> (2022–2023).
+  - icon: "📄"
+    date: 2022
+    text: >-
+      Co-authored <a href="https://doi.org/10.1016/j.celrep.2022.111419">study</a> on the distinct planar polarization mechanisms of the core
+      and Fat–Dachsous pathways, published in <span class="venue">Cell Reports</span>.
+  - icon: "🔬"
+    date: 2021
+    text: >-
+      Began a <span class="highlight">Wellcome Trust-funded</span> Postdoctoral Research Fellowship at the University of Sheffield, investigating
+      how mechanical forces shape organ development.
+  - icon: "🛠️"
+    date: 2021
+    text: >-
+      Released <a href="https://doi.org/10.1242/dev.198952">QuantifyPolarity</a>, an open-source toolkit for quantifying planar polarity and
+      cell morphology, published in <span class="venue">Development</span>.
+  - icon: "🎓"
+    date: 2020
+    text: >-
+      Awarded a PhD in Biomedical Science by the University of Sheffield, supported by a Marie Skłodowska-Curie Actions ITN Scholarship.
 
 # Publications are shown as a horizontal card slider.
 # authors: HTML allowed; wrap your own name in <span class="me">...</span>.
