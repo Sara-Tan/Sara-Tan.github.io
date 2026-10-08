@@ -89,6 +89,7 @@ publications:
     idea: Investigates how mechanical forces (tissue shear) orient planar cell polarity during organ development.
     links:
       - { name: Paper, icon: fas fa-file-pdf, url: "https://doi.org/10.1038/s41467-025-56744-7" }
+      - { name: Download, icon: fab fa-github, url: "https://github.com/Sara-Tan/Tissue-Velocity-Gradient-Analysis" }
     figure_source: Tan & Strutt, Nature Communications (2025), open access
     figures:
       - src: publications/natcomms25-model.jpg
