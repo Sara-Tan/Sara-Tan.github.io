@@ -47,8 +47,7 @@ news:
   - icon: "📄"
     date: 2022
     text: >-
-      Co-authored <a href="https://doi.org/10.1016/j.celrep.2022.111419">study</a> on the distinct planar polarization mechanisms of the core
-      and Fat–Dachsous pathways, published in <span class="venue">Cell Reports</span>.
+      Co-authored <a href="https://doi.org/10.1016/j.celrep.2022.111419">study</a> on the genetic mechanisms of the organ development, published in <span class="venue">Cell Reports</span>.
   - icon: "🔬"
     date: 2021
     text: >-
@@ -62,28 +61,26 @@ news:
   - icon: "🎓"
     date: 2020
     text: >-
-      Awarded a PhD in Biomedical Science by the University of Sheffield, supported by a Marie Skłodowska-Curie Actions ITN Scholarship.
+      Awarded a PhD in Biomedical Science by the University of Sheffield, supported by a <span class="highlight">Marie Skłodowska-Curie Actions ITN Scholarship</span>.
 
 # Publications are shown as a horizontal card slider.
 # authors: HTML allowed; wrap your own name in <span class="me">...</span>.
 # idea: optional one-line summary shown when hovering/tapping the lightbulb.
 # Add links as e.g. - { name: Paper, icon: fas fa-file-pdf, url: "https://..." } and an image under assets/img/.
-# figures: thumbnails shown under the card (click to enlarge); figure_source is appended to each caption.
+# figures: thumbnail(s) at the top of the card (click to enlarge); figure_source is appended to each caption.
 publications:
   - title: "Beam Search as Test-Time Self-Distillation via Counterfactual Contexts"
     venue: NeurIPS 2026 Workshop
-    image: publications/neurips26-fig1.jpg
     authors: '<span class="me">Sara S. E. Tan</span>, Xiaotong Ji, Rasul Tutunov, Haitham Bou-Ammar, Matthieu Zimmer'
     idea: A decoding method that steers the model towards better answers using contrastive prompts, with no retraining or reward models.
     links:
       - { name: arXiv, icon: fas fa-file-pdf, url: "https://arxiv.org/abs/2609.37041" }
     figure_source: Tan et al., arXiv:2609.37041 (2026)
     figures:
-      - {
-          src: publications/neurips26-fig1.jpg,
-          caption: "Figure 1: Inference efficiency of (a) Qwen2.5-7B and (b) DeepSeek-Math-7B-Instruct on MATH500.",
-        }
-      - { src: publications/neurips26-fig3.jpg, caption: "Figure 3: Effect of block size K on contrastive beam search." }
+      - src: publications/neurips26-fig1.jpg
+        caption: "Figure 1: Inference efficiency of (a) Qwen2.5-7B and (b) DeepSeek-Math-7B-Instruct on MATH500."
+      - src: publications/neurips26-fig4.jpg
+        caption: "Figure 4: Pass@k on MATH500 for power sampling (PS), standard beam search (BS) and contrastive beam search (CBS), DeepSeek-Math-7B-Instruct."
     bibtex: |
       @inproceedings{tan2026beam,
         title={Beam Search as Test-Time Self-Distillation via Counterfactual Contexts},
@@ -95,16 +92,14 @@ publications:
       }
   - title: "Tissue shear as a cue for aligning planar polarity in the developing Drosophila wing"
     venue: Nature Communications 2025
-    image: publications/natcomms25-fig1.jpg
     authors: '<span class="me">Sara S. E. Tan</span>, David Strutt'
     idea: Investigates how mechanical forces (tissue shear) orient planar cell polarity during organ development.
     links:
       - { name: Paper, icon: fas fa-file-pdf, url: "https://doi.org/10.1038/s41467-025-56744-7" }
     figure_source: Tan & Strutt, Nature Communications (2025), open access
     figures:
-      - { src: publications/natcomms25-fig1.jpg, caption: "Fig. 1: Tissue-level Fz polarity, stability and stress evolution." }
-      - { src: publications/natcomms25-fig3.jpg, caption: "Fig. 3: Fz accumulation on newly formed junctions post-T1 transition." }
-      - { src: publications/natcomms25-fig4.jpg, caption: "Fig. 4: Anisotropic tissue stress influences epithelial flow patterns." }
+      - src: publications/natcomms25-model.jpg
+        caption: "Fig. 8f: Model of how tissue stress anisotropy drives a gradient of cell flow, destabilising core proteins and aligning proximal-distal polarity."
     bibtex: |
       @article{tan2025tissue,
         title={Tissue shear as a cue for aligning planar polarity in the developing Drosophila wing},
@@ -115,18 +110,13 @@ publications:
       }
   - title: "Distinct mechanisms of planar polarization by the core and Fat-Dachsous planar polarity pathways in the Drosophila wing"
     venue: Cell Reports 2022
-    image: publications/cellrep22-graphical-abstract.jpg
     authors: 'Alexander Brittle, Samantha J. Warrington, Helen Strutt, Elizabeth Manning, <span class="me">Sara S. E. Tan</span>, David Strutt'
     links:
       - { name: Paper, icon: fas fa-file-pdf, url: "https://doi.org/10.1016/j.celrep.2022.111419" }
     figure_source: Brittle et al., Cell Reports (2022), open access
     figures:
-      - { src: publications/cellrep22-graphical-abstract.jpg, caption: "Graphical abstract." }
-      - { src: publications/cellrep22-fig1.jpg, caption: "Figure 1: Organization of the core and Ft-Ds planar polarity pathways in the pupal wing." }
-      - {
-          src: publications/cellrep22-fig5.jpg,
-          caption: "Figure 5: The core pathway but not the Ft-Ds pathway de novo self-organizes coordinated cellular polarity.",
-        }
+      - src: publications/cellrep22-fig1.jpg
+        caption: "Figure 1: Organization of the core and Ft-Ds planar polarity pathways in the pupal wing."
     bibtex: |
       @article{brittle2022distinct,
         title={Distinct mechanisms of planar polarization by the core and Fat-Dachsous planar polarity pathways in the Drosophila wing},
@@ -137,22 +127,14 @@ publications:
       }
   - title: "QuantifyPolarity, a new tool-kit for measuring planar polarized protein distributions and cell properties in developing tissues"
     venue: Development 2021
-    image: publications/dev21-fig5.jpg
     authors: '<span class="me">Sara S. E. Tan</span>, Weijie Tan, Katherine H. Fisher, David Strutt'
     idea: Open-source image analysis software for quantifying planar polarity and cell properties, adopted by research institutions worldwide.
     links:
       - { name: Paper, icon: fas fa-file-pdf, url: "https://doi.org/10.1242/dev.198952" }
     figure_source: Tan et al., Development (2021), open access
     figures:
-      - {
-          src: publications/dev21-fig5.jpg,
-          caption: "Fig. 5: QuantifyPolarity graphical user interface for quantification of planar cell polarity and cell shape.",
-        }
-      - { src: publications/dev21-fig1.jpg, caption: "Fig. 1: Methods for quantitation of planar polarity." }
-      - {
-          src: publications/dev21-fig3.jpg,
-          caption: "Fig. 3: Comparison of planar polarity quantification methods on Drosophila pupal wings at different developmental stages.",
-        }
+      - src: publications/dev21-fig5.jpg
+        caption: "Fig. 5: QuantifyPolarity graphical user interface for quantification of planar cell polarity and cell shape."
     bibtex: |
       @article{tan2021quantifypolarity,
         title={QuantifyPolarity, a new tool-kit for measuring planar polarized protein distributions and cell properties in developing tissues},

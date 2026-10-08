@@ -195,12 +195,25 @@
 
           <div class="pub-slider" id="pubSlider" tabindex="0" role="region" aria-label="Publications carousel">
             {% for pub in home.publications %}
-              <article class="pub-card{% unless pub.image %} no-image{% endunless %}">
+              <article class="pub-card{% unless pub.figures.size > 0 %} no-image{% endunless %}">
                 {% if pub.venue -%}
                   <span class="pub-venue">{{ pub.venue }}</span>
                 {%- endif %}
-                {% if pub.image %}
-                  <img class="pub-image" src="{{ pub.image | prepend: '/assets/img/' | relative_url }}" alt="{{ pub.title | escape }}" loading="lazy">
+                {% if pub.figures.size > 0 %}
+                  <div class="pub-figures">
+                    {% for fig in pub.figures %}
+                      {% capture fig_caption %}{{ fig.caption }}{% if pub.figure_source %} Source: {{ pub.figure_source }}.{% endif %}{% endcapture %}
+                      <button
+                        type="button"
+                        class="pub-figure"
+                        data-src="{{ fig.src | prepend: '/assets/img/' | relative_url }}"
+                        data-caption="{{ fig_caption | strip | escape }}"
+                        aria-label="Enlarge {{ fig.caption | escape }}"
+                      >
+                        <img src="{{ fig.src | prepend: '/assets/img/' | relative_url }}" alt="{{ fig.caption | escape }}" loading="lazy">
+                      </button>
+                    {% endfor %}
+                  </div>
                 {% endif %}
                 <div class="pub-content">
                   <h3 class="pub-title">{{ pub.title }}</h3>
@@ -228,22 +241,6 @@
                       <pre class="bibtex-source" hidden>{{ pub.bibtex | strip | escape }}</pre>
                     {% endif %}
                   </div>
-                  {% if pub.figures.size > 0 %}
-                    <div class="pub-figures" aria-label="Figures from this paper">
-                      {% for fig in pub.figures %}
-                        {% capture fig_caption %}{{ fig.caption }}{% if pub.figure_source %} Source: {{ pub.figure_source }}.{% endif %}{% endcapture %}
-                        <button
-                          type="button"
-                          class="pub-figure"
-                          data-src="{{ fig.src | prepend: '/assets/img/' | relative_url }}"
-                          data-caption="{{ fig_caption | strip | escape }}"
-                          aria-label="Enlarge {{ fig.caption | escape }}"
-                        >
-                          <img src="{{ fig.src | prepend: '/assets/img/' | relative_url }}" alt="{{ fig.caption | escape }}" loading="lazy">
-                        </button>
-                      {% endfor %}
-                    </div>
-                  {% endif %}
                 </div>
               </article>
             {% endfor %}
