@@ -152,4 +152,23 @@
       });
     });
   }
+
+  // Figure lightbox
+  const figDialog = document.getElementById("figureDialog");
+  if (figDialog) {
+    const figImg = document.getElementById("figureImg");
+    const figCaption = document.getElementById("figureCaption");
+    document.querySelectorAll(".pub-figure").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        figImg.src = btn.dataset.src;
+        figImg.alt = btn.querySelector("img").alt;
+        figCaption.textContent = btn.dataset.caption;
+        figDialog.showModal();
+      });
+    });
+    document.getElementById("figureClose").addEventListener("click", () => figDialog.close());
+    figDialog.addEventListener("click", (e) => {
+      if (e.target === figDialog) figDialog.close();
+    });
+  }
 })();

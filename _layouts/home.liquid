@@ -228,6 +228,22 @@
                       <pre class="bibtex-source" hidden>{{ pub.bibtex | strip | escape }}</pre>
                     {% endif %}
                   </div>
+                  {% if pub.figures.size > 0 %}
+                    <div class="pub-figures" aria-label="Figures from this paper">
+                      {% for fig in pub.figures %}
+                        {% capture fig_caption %}{{ fig.caption }}{% if pub.figure_source %} Source: {{ pub.figure_source }}.{% endif %}{% endcapture %}
+                        <button
+                          type="button"
+                          class="pub-figure"
+                          data-src="{{ fig.src | prepend: '/assets/img/' | relative_url }}"
+                          data-caption="{{ fig_caption | strip | escape }}"
+                          aria-label="Enlarge {{ fig.caption | escape }}"
+                        >
+                          <img src="{{ fig.src | prepend: '/assets/img/' | relative_url }}" alt="{{ fig.caption | escape }}" loading="lazy">
+                        </button>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
                 </div>
               </article>
             {% endfor %}
@@ -364,6 +380,13 @@
       </div>
       <pre id="citeText"></pre>
       <button type="button" class="pub-link" id="citeCopy"><i class="fas fa-copy"></i> <span>Copy</span></button>
+    </dialog>
+
+    <!-- Figure lightbox -->
+    <dialog class="figure-dialog" id="figureDialog" aria-label="Figure">
+      <button type="button" class="cite-close" id="figureClose" aria-label="Close"><i class="fas fa-times"></i></button>
+      <img id="figureImg" alt="">
+      <p id="figureCaption"></p>
     </dialog>
 
     <script src="{{ '/assets/js/home.js' | relative_url | bust_file_cache }}"></script>

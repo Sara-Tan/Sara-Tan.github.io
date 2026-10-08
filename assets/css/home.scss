@@ -600,8 +600,9 @@ html[data-theme="dark"] .theme-toggle .fa-moon {
   width: 100%;
   height: 180px;
   object-fit: cover;
+  object-position: top;
   border-radius: 16px 16px 0 0;
-  background: var(--accent-soft);
+  background: #fff;
 }
 
 .pub-content {
@@ -660,6 +661,76 @@ html[data-theme="dark"] .theme-toggle .fa-moon {
 .pub-link:hover {
   color: #fff;
   background: var(--accent);
+}
+
+.pub-figures {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--accent-soft);
+}
+
+.pub-figure {
+  height: 72px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--accent-soft);
+  border-radius: 8px;
+  background: #fff;
+  cursor: zoom-in;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.pub-figure:hover {
+  transform: scale(1.04);
+  border-color: var(--accent);
+}
+
+.pub-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.figure-dialog {
+  width: 94vw;
+  max-width: 1000px;
+  padding: 44px 20px 16px;
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  color: var(--text);
+  background: var(--card-solid);
+  box-shadow: var(--shadow-hover);
+}
+
+.figure-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.figure-dialog .cite-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+}
+
+.figure-dialog img {
+  display: block;
+  width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.figure-dialog p {
+  margin: 12px 0 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
 }
 
 .idea-tooltip {

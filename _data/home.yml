@@ -51,17 +51,26 @@ news:
 # authors: HTML allowed; wrap your own name in <span class="me">...</span>.
 # idea: optional one-line summary shown when hovering/tapping the lightbulb.
 # Add links as e.g. - { name: Paper, icon: fas fa-file-pdf, url: "https://..." } and an image under assets/img/.
+# figures: thumbnails shown under the card (click to enlarge); figure_source is appended to each caption.
 publications:
   - title: "Beam Search as Test-Time Self-Distillation via Counterfactual Contexts"
     venue: NeurIPS 2026 Workshop
-    authors: '<span class="me">Sara S. E. Tan</span> et al.'
+    image: publications/neurips26-fig1.jpg
+    authors: '<span class="me">Sara S. E. Tan</span>, Xiaotong Ji, Rasul Tutunov, Haitham Bou-Ammar, Matthieu Zimmer'
     idea: A decoding method that steers the model towards better answers using contrastive prompts, with no retraining or reward models.
     links:
       - { name: arXiv, icon: fas fa-file-pdf, url: "https://arxiv.org/abs/2609.37041" }
+    figure_source: Tan et al., arXiv:2609.37041 (2026)
+    figures:
+      - {
+          src: publications/neurips26-fig1.jpg,
+          caption: "Figure 1: Inference efficiency of (a) Qwen2.5-7B and (b) DeepSeek-Math-7B-Instruct on MATH500.",
+        }
+      - { src: publications/neurips26-fig3.jpg, caption: "Figure 3: Effect of block size K on contrastive beam search." }
     bibtex: |
       @inproceedings{tan2026beam,
         title={Beam Search as Test-Time Self-Distillation via Counterfactual Contexts},
-        author={Tan, Sara Su Ee and others},
+        author={Tan, Su Ee and Ji, Xiaotong and Tutunov, Rasul and Bou-Ammar, Haitham and Zimmer, Matthieu},
         booktitle={NeurIPS Workshop on Towards Test-Time Continual Learning Agents},
         year={2026},
         eprint={2609.37041},
@@ -69,41 +78,68 @@ publications:
       }
   - title: "Tissue shear as a cue for aligning planar polarity in the developing Drosophila wing"
     venue: Nature Communications 2025
+    image: publications/natcomms25-fig1.jpg
     authors: '<span class="me">Sara S. E. Tan</span>, David Strutt'
     idea: Investigates how mechanical forces (tissue shear) orient planar cell polarity during organ development.
     links:
       - { name: Paper, icon: fas fa-file-pdf, url: "https://doi.org/10.1038/s41467-025-56744-7" }
+    figure_source: Tan & Strutt, Nature Communications (2025), open access
+    figures:
+      - { src: publications/natcomms25-fig1.jpg, caption: "Fig. 1: Tissue-level Fz polarity, stability and stress evolution." }
+      - { src: publications/natcomms25-fig3.jpg, caption: "Fig. 3: Fz accumulation on newly formed junctions post-T1 transition." }
+      - { src: publications/natcomms25-fig4.jpg, caption: "Fig. 4: Anisotropic tissue stress influences epithelial flow patterns." }
     bibtex: |
       @article{tan2025tissue,
         title={Tissue shear as a cue for aligning planar polarity in the developing Drosophila wing},
-        author={Tan, Sara Su Ee and Strutt, David},
+        author={Tan, Su Ee and Strutt, David},
         journal={Nature Communications},
         year={2025},
         doi={10.1038/s41467-025-56744-7}
       }
   - title: "Distinct mechanisms of planar polarization by the core and Fat-Dachsous planar polarity pathways in the Drosophila wing"
     venue: Cell Reports 2022
+    image: publications/cellrep22-graphical-abstract.jpg
     authors: 'Alexander Brittle, Samantha J. Warrington, Helen Strutt, Elizabeth Manning, <span class="me">Sara S. E. Tan</span>, David Strutt'
     links:
       - { name: Paper, icon: fas fa-file-pdf, url: "https://doi.org/10.1016/j.celrep.2022.111419" }
+    figure_source: Brittle et al., Cell Reports (2022), open access
+    figures:
+      - { src: publications/cellrep22-graphical-abstract.jpg, caption: "Graphical abstract." }
+      - { src: publications/cellrep22-fig1.jpg, caption: "Figure 1: Organization of the core and Ft-Ds planar polarity pathways in the pupal wing." }
+      - {
+          src: publications/cellrep22-fig5.jpg,
+          caption: "Figure 5: The core pathway but not the Ft-Ds pathway de novo self-organizes coordinated cellular polarity.",
+        }
     bibtex: |
       @article{brittle2022distinct,
         title={Distinct mechanisms of planar polarization by the core and Fat-Dachsous planar polarity pathways in the Drosophila wing},
-        author={Brittle, Alexander and Warrington, Samantha J. and Strutt, Helen and Manning, Elizabeth and Tan, Sara Su Ee and Strutt, David},
+        author={Brittle, Alexander and Warrington, Samantha J. and Strutt, Helen and Manning, Elizabeth and Tan, Su Ee and Strutt, David},
         journal={Cell Reports},
         year={2022},
         doi={10.1016/j.celrep.2022.111419}
       }
   - title: "QuantifyPolarity, a new tool-kit for measuring planar polarized protein distributions and cell properties in developing tissues"
     venue: Development 2021
-    authors: '<span class="me">Sara S. E. Tan</span> et al.'
+    image: publications/dev21-fig5.jpg
+    authors: '<span class="me">Sara S. E. Tan</span>, Weijie Tan, Katherine H. Fisher, David Strutt'
     idea: Open-source image analysis software for quantifying planar polarity and cell properties, adopted by research institutions worldwide.
     links:
       - { name: Paper, icon: fas fa-file-pdf, url: "https://doi.org/10.1242/dev.198952" }
+    figure_source: Tan et al., Development (2021), open access
+    figures:
+      - {
+          src: publications/dev21-fig5.jpg,
+          caption: "Fig. 5: QuantifyPolarity graphical user interface for quantification of planar cell polarity and cell shape.",
+        }
+      - { src: publications/dev21-fig1.jpg, caption: "Fig. 1: Methods for quantitation of planar polarity." }
+      - {
+          src: publications/dev21-fig3.jpg,
+          caption: "Fig. 3: Comparison of planar polarity quantification methods on Drosophila pupal wings at different developmental stages.",
+        }
     bibtex: |
       @article{tan2021quantifypolarity,
         title={QuantifyPolarity, a new tool-kit for measuring planar polarized protein distributions and cell properties in developing tissues},
-        author={Tan, Sara Su Ee and others},
+        author={Tan, Su Ee and Tan, Weijie and Fisher, Katherine H. and Strutt, David},
         journal={Development},
         year={2021},
         doi={10.1242/dev.198952}
