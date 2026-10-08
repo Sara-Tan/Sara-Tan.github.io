@@ -129,36 +129,12 @@
   });
   document.addEventListener("click", () => tooltips.forEach((o) => o.classList.remove("open")));
 
-  // BibTeX dialog
-  const dialog = document.getElementById("citeDialog");
-  const citeText = document.getElementById("citeText");
-  const citeCopy = document.getElementById("citeCopy");
-  if (dialog && citeText) {
-    document.querySelectorAll(".cite-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const src = btn.parentElement.querySelector(".bibtex-source");
-        citeText.textContent = src ? src.textContent : "";
-        citeCopy.querySelector("span").textContent = "Copy";
-        dialog.showModal();
-      });
-    });
-    document.getElementById("citeClose").addEventListener("click", () => dialog.close());
-    dialog.addEventListener("click", (e) => {
-      if (e.target === dialog) dialog.close();
-    });
-    citeCopy.addEventListener("click", () => {
-      navigator.clipboard.writeText(citeText.textContent).then(() => {
-        citeCopy.querySelector("span").textContent = "Copied!";
-      });
-    });
-  }
-
   // Figure lightbox
   const figDialog = document.getElementById("figureDialog");
   if (figDialog) {
     const figImg = document.getElementById("figureImg");
     const figCaption = document.getElementById("figureCaption");
-    document.querySelectorAll(".pub-figure").forEach((btn) => {
+    document.querySelectorAll("button.pub-figure").forEach((btn) => {
       btn.addEventListener("click", () => {
         figImg.src = btn.dataset.src;
         figImg.alt = btn.querySelector("img").alt;

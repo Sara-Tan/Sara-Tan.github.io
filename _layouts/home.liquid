@@ -202,16 +202,29 @@
                 {% if pub.figures.size > 0 %}
                   <div class="pub-figures">
                     {% for fig in pub.figures %}
-                      {% capture fig_caption %}{{ fig.caption }}{% if pub.figure_source %} Source: {{ pub.figure_source }}.{% endif %}{% endcapture %}
-                      <button
-                        type="button"
-                        class="pub-figure"
-                        data-src="{{ fig.src | prepend: '/assets/img/' | relative_url }}"
-                        data-caption="{{ fig_caption | strip | escape }}"
-                        aria-label="Enlarge {{ fig.caption | escape }}"
-                      >
-                        <img src="{{ fig.src | prepend: '/assets/img/' | relative_url }}" alt="{{ fig.caption | escape }}" loading="lazy">
-                      </button>
+                      {% if fig.video %}
+                        <a
+                          class="pub-figure pub-video"
+                          href="{{ fig.video }}"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Watch {{ fig.caption | escape }} on YouTube"
+                        >
+                          <img src="{{ fig.src | prepend: '/assets/img/' | relative_url }}" alt="{{ fig.caption | escape }}" loading="lazy">
+                          <span class="play-icon" aria-hidden="true"><i class="fas fa-play"></i></span>
+                        </a>
+                      {% else %}
+                        {% capture fig_caption %}{{ fig.caption }}{% if pub.figure_source %} Source: {{ pub.figure_source }}.{% endif %}{% endcapture %}
+                        <button
+                          type="button"
+                          class="pub-figure"
+                          data-src="{{ fig.src | prepend: '/assets/img/' | relative_url }}"
+                          data-caption="{{ fig_caption | strip | escape }}"
+                          aria-label="Enlarge {{ fig.caption | escape }}"
+                        >
+                          <img src="{{ fig.src | prepend: '/assets/img/' | relative_url }}" alt="{{ fig.caption | escape }}" loading="lazy">
+                        </button>
+                      {% endif %}
                     {% endfor %}
                   </div>
                 {% endif %}
@@ -236,10 +249,6 @@
                         {{- link.name }}
                       </a>
                     {% endfor %}
-                    {% if pub.bibtex %}
-                      <button type="button" class="pub-link cite-btn"><i class="fas fa-quote-right"></i> Cite</button>
-                      <pre class="bibtex-source" hidden>{{ pub.bibtex | strip | escape }}</pre>
-                    {% endif %}
                   </div>
                 </div>
               </article>
@@ -369,19 +378,9 @@
       </footer>
     </main>
 
-    <!-- BibTeX dialog -->
-    <dialog class="cite-dialog" id="citeDialog" aria-labelledby="citeDialogTitle">
-      <div class="cite-dialog-header">
-        <h3 id="citeDialogTitle">BibTeX</h3>
-        <button type="button" class="cite-close" id="citeClose" aria-label="Close"><i class="fas fa-times"></i></button>
-      </div>
-      <pre id="citeText"></pre>
-      <button type="button" class="pub-link" id="citeCopy"><i class="fas fa-copy"></i> <span>Copy</span></button>
-    </dialog>
-
     <!-- Figure lightbox -->
     <dialog class="figure-dialog" id="figureDialog" aria-label="Figure">
-      <button type="button" class="cite-close" id="figureClose" aria-label="Close"><i class="fas fa-times"></i></button>
+      <button type="button" class="dialog-close" id="figureClose" aria-label="Close"><i class="fas fa-times"></i></button>
       <img id="figureImg" alt="">
       <p id="figureCaption"></p>
     </dialog>

@@ -56,7 +56,7 @@ news:
   - icon: "🛠️"
     date: 2021
     text: >-
-      Released <a href="https://doi.org/10.1242/dev.198952">QuantifyPolarity</a>, an open-source toolkit for quantifying planar polarity and
+      Released <a href="https://doi.org/10.1242/dev.198952"><em>QuantifyPolarity</em></a>, an open-source toolkit for quantifying proteins and
       cell morphology, published in <span class="venue">Development</span>.
   - icon: "🎓"
     date: 2020
@@ -83,15 +83,6 @@ publications:
         caption: "Figure 4: Pass@k on MATH500 for power sampling (PS), standard beam search (BS) and contrastive beam search (CBS), DeepSeek-Math-7B-Instruct."
       - src: publications/neurips26-fig5.jpg
         caption: "Figure 5: Best-of-16 accuracy for ten contrastive context pairs on MATH500, HumanEval and GPQA (Qwen2.5-7B)."
-    bibtex: |
-      @inproceedings{tan2026beam,
-        title={Beam Search as Test-Time Self-Distillation via Counterfactual Contexts},
-        author={Tan, Su Ee and Ji, Xiaotong and Tutunov, Rasul and Bou-Ammar, Haitham and Zimmer, Matthieu},
-        booktitle={NeurIPS Workshop on Towards Test-Time Continual Learning Agents},
-        year={2026},
-        eprint={2609.37041},
-        archivePrefix={arXiv}
-      }
   - title: "Tissue shear as a cue for aligning planar polarity in the developing Drosophila wing"
     venue: Nature Communications 2025
     authors: '<span class="me">Sara S. E. Tan</span>, David Strutt'
@@ -102,14 +93,6 @@ publications:
     figures:
       - src: publications/natcomms25-model.jpg
         caption: "Fig. 8f: Model of how tissue stress anisotropy drives a gradient of cell flow, destabilising core proteins and aligning proximal-distal polarity."
-    bibtex: |
-      @article{tan2025tissue,
-        title={Tissue shear as a cue for aligning planar polarity in the developing Drosophila wing},
-        author={Tan, Su Ee and Strutt, David},
-        journal={Nature Communications},
-        year={2025},
-        doi={10.1038/s41467-025-56744-7}
-      }
   - title: "Distinct mechanisms of planar polarization by the core and Fat-Dachsous planar polarity pathways in the Drosophila wing"
     venue: Cell Reports 2022
     authors: 'Alexander Brittle, Samantha J. Warrington, Helen Strutt, Elizabeth Manning, <span class="me">Sara S. E. Tan</span>, David Strutt'
@@ -119,32 +102,21 @@ publications:
     figures:
       - src: publications/cellrep22-fig1.jpg
         caption: "Figure 1: Organization of the core and Ft-Ds planar polarity pathways in the pupal wing."
-    bibtex: |
-      @article{brittle2022distinct,
-        title={Distinct mechanisms of planar polarization by the core and Fat-Dachsous planar polarity pathways in the Drosophila wing},
-        author={Brittle, Alexander and Warrington, Samantha J. and Strutt, Helen and Manning, Elizabeth and Tan, Su Ee and Strutt, David},
-        journal={Cell Reports},
-        year={2022},
-        doi={10.1016/j.celrep.2022.111419}
-      }
   - title: "QuantifyPolarity, a new tool-kit for measuring planar polarized protein distributions and cell properties in developing tissues"
     venue: Development 2021
     authors: '<span class="me">Sara S. E. Tan</span>, Weijie Tan, Katherine H. Fisher, David Strutt'
     idea: Open-source image analysis software for quantifying planar polarity and cell properties, adopted by research institutions worldwide.
     links:
       - { name: Paper, icon: fas fa-file-pdf, url: "https://doi.org/10.1242/dev.198952" }
+      - { name: Download, icon: fab fa-github, url: "https://github.com/Sara-Tan/QuantifyPolarity" }
+      - { name: Video, icon: fab fa-youtube, url: "https://www.youtube.com/watch?v=SBmG2YnCpcI" }
     figure_source: Tan et al., Development (2021), open access
     figures:
       - src: publications/dev21-fig5.jpg
         caption: "Fig. 5: QuantifyPolarity graphical user interface for quantification of planar cell polarity and cell shape."
-    bibtex: |
-      @article{tan2021quantifypolarity,
-        title={QuantifyPolarity, a new tool-kit for measuring planar polarized protein distributions and cell properties in developing tissues},
-        author={Tan, Su Ee and Tan, Weijie and Fisher, Katherine H. and Strutt, David},
-        journal={Development},
-        year={2021},
-        doi={10.1242/dev.198952}
-      }
+      - src: publications/quantifypolarity-video.jpg
+        caption: "QuantifyPolarity single image cell polarity and shape analysis tutorial"
+        video: "https://www.youtube.com/watch?v=SBmG2YnCpcI"
 
 # Selected projects grid. image is relative to assets/img/ (falls back to icon).
 projects:
@@ -161,6 +133,8 @@ projects:
     desc: Automatically quantifies protein distribution and cellular properties in developing tissues. Widely adopted by research institutions around the world and cited in numerous peer-reviewed publications.
     links:
       - { name: Paper, icon: fas fa-file-pdf, url: "https://doi.org/10.1242/dev.198952" }
+      - { name: Download, icon: fab fa-github, url: "https://github.com/Sara-Tan/QuantifyPolarity" }
+      - { name: Video, icon: fab fa-youtube, url: "https://www.youtube.com/watch?v=SBmG2YnCpcI" }
   - title: Automated Cell Segmentation and Tracking Toolkit with Machine Learning
     year: 2018
     image: projects/cell-tracking.jpg
