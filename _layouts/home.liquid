@@ -276,14 +276,12 @@
                 {% if project.video %}
                   <video
                     class="project-image project-video"
-                    {% if project.image %}
-                      poster="{{ project.image | prepend: '/assets/img/' | relative_url }}"
-                    {% endif %}
+                    autoplay
                     muted
                     loop
                     playsinline
                     controls
-                    preload="none"
+                    preload="auto"
                     aria-label="{{ project.title | escape }} demo video"
                   >
                     <source src="{{ project.video | relative_url }}" type="video/mp4">

@@ -148,9 +148,9 @@
     });
   }
 
-  // Project videos: load and play only while on screen (skipped for reduced-motion users)
+  // Project videos: pause while off screen to save CPU
   const videos = document.querySelectorAll(".project-video");
-  if (videos.length && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  if (videos.length && "IntersectionObserver" in window) {
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
