@@ -4,108 +4,137 @@
 
 profile:
   image: prof_pic.jpg
-  badge: PhD Student
+  badge: AI Engineer
   tags:
-    - { icon: fas fa-graduation-cap, text: Your University }
-    - { icon: fas fa-brain, text: Machine Learning }
-    - { icon: fas fa-eye, text: Computer Vision }
-    - { icon: fas fa-robot, text: Robotics }
+    - { icon: fas fa-building, text: Huawei R&D UK }
+    - { icon: fas fa-brain, text: LLM Reasoning }
+    - { icon: fas fa-robot, text: Multi-Agent Systems }
+    - { icon: fas fa-dna, text: AI for Science }
+    - { icon: fas fa-microscope, text: Biomedical Science PhD }
   # The bio text itself is the body of _pages/about.md.
   # Optional highlighted call-out under the bio. Leave empty to hide.
-  callout: >
-    I am open to <strong>research collaborations</strong> and <strong>internship opportunities</strong>.
-    Feel free to drop me an email!
+  callout:
 
 socials:
-  - { title: Email, icon: fas fa-envelope, url: "mailto:you@example.com", color: "#EA4335" }
+  - { title: Email, icon: fas fa-envelope, url: "mailto:stan.suee@gmail.com", color: "#EA4335" }
+  - { title: LinkedIn, icon: fab fa-linkedin-in, url: "https://www.linkedin.com/in/sara-se-tan1/", color: "#0A66C2" }
   - { title: GitHub, icon: fab fa-github, url: "https://github.com/Sara-Tan", color: "#333333" }
-  - { title: LinkedIn, icon: fab fa-linkedin-in, url: "https://www.linkedin.com/in/your-username", color: "#0A66C2" }
-  - { title: Google Scholar, icon: fab fa-google-scholar, url: "https://scholar.google.com/citations?user=qc6CJjYAAAAJ", color: "#4285F4" }
-  - { title: X / Twitter, icon: fab fa-x-twitter, url: "https://x.com/your-handle", color: "#1DA1F2" }
 
 # Navbar CV link. Use a site path (e.g. /cv/) or a PDF (e.g. /assets/pdf/cv.pdf). Leave empty to hide.
-cv_url: /cv/
+cv_url:
 
 # Number of news items shown before "Show More".
 news_visible: 5
 news:
-  - { icon: "🎉", date: Sep 2026, text: 'Paper on <span class="highlight">your topic</span> accepted at <span class="venue">NeurIPS 2026</span>!' }
-  - { icon: "🚀", date: Jun 2026, text: 'Started a research internship at <a href="#">Company</a>.' }
-  - { icon: "🏆", date: Mar 2026, text: "Received the Best Paper Award at Some Workshop!" }
-  - { icon: "🎤", date: Jan 2026, text: "Invited talk at Some Seminar." }
-  - { icon: "👩‍🎓", date: Sep 2025, text: "Started my PhD at Your University!" }
-  - { icon: "😎", date: May 2025, text: 'Paper on <span class="highlight">another topic</span> accepted at <span class="venue">CVPR 2025</span>!' }
+  - {
+      icon: "🎉",
+      date: 2026,
+      text: 'Paper on <span class="highlight">test-time self-distillation for LLM reasoning</span> accepted at the <span class="venue">NeurIPS 2026 TTLC Workshop</span>!',
+    }
+  - { icon: "🚀", date: 2025, text: "Joined Huawei Technologies R&D UK as an AI Technical Engineer." }
+  - {
+      icon: "😎",
+      date: 2025,
+      text: 'Paper on <span class="highlight">tissue shear and planar polarity</span> published in <span class="venue">Nature Communications</span>!',
+    }
+  - { icon: "🏆", date: 2022, text: "Received the Women Academic Researcher Award (2022–2023)." }
+  - {
+      icon: "😎",
+      date: 2022,
+      text: 'Paper on <span class="highlight">planar polarization mechanisms</span> published in <span class="venue">Cell Reports</span>!',
+    }
+  - { icon: "🔬", date: 2021, text: "Started a Wellcome Trust-funded Postdoctoral Research Fellowship at the University of Sheffield." }
+  - { icon: "🛠️", date: 2021, text: 'Released <span class="highlight">QuantifyPolarity</span>, published in <span class="venue">Development</span>.' }
+  - { icon: "👩‍🎓", date: 2020, text: "Awarded my PhD in Biomedical Science from the University of Sheffield!" }
 
 # Publications are shown as a horizontal card slider.
 # authors: HTML allowed; wrap your own name in <span class="me">...</span>.
 # idea: optional one-line summary shown when hovering/tapping the lightbulb.
+# Add links as e.g. - { name: Paper, icon: fas fa-file-pdf, url: "https://..." } and an image under assets/img/.
 publications:
-  - title: "A Great Paper Title: Something About Brownian Motion"
-    venue: NeurIPS 2026
-    image: publication_preview/brownian-motion.gif
-    authors: '<span class="me">Sara Tan</span>, Coauthor One, Coauthor Two'
-    idea: One-sentence summary of the main idea of this paper.
-    links:
-      - { name: Paper, icon: fas fa-file-pdf, url: "https://arxiv.org/" }
-      - { name: Web, icon: fas fa-globe, url: "#" }
-      - { name: Code, icon: fab fa-github, url: "https://github.com/" }
+  - title: "Beam Search as Test-Time Self-Distillation via Counterfactual Contexts"
+    venue: NeurIPS 2026 Workshop
+    authors: '<span class="me">Sara S. E. Tan</span> et al.'
+    idea: A decoding method that steers the model towards better answers using contrastive prompts, with no retraining or reward models.
+    links: []
     bibtex: |
-      @inproceedings{tan2026great,
-        title={A Great Paper Title},
-        author={Tan, Sara and One, Coauthor and Two, Coauthor},
-        booktitle={NeurIPS},
+      @inproceedings{tan2026beam,
+        title={Beam Search as Test-Time Self-Distillation via Counterfactual Contexts},
+        author={Tan, Sara Su Ee and others},
+        booktitle={NeurIPS Workshop on Towards Test-Time Continual Learning Agents},
         year={2026}
       }
-  - title: "Another Paper on Wave Mechanics"
-    venue: CVPR 2025
-    image: publication_preview/wave-mechanics.gif
-    authors: 'Coauthor One<sup>*</sup>, <span class="me">Sara Tan</span><sup>*</sup>, Coauthor Two'
-    note: "* Equal contribution"
-    links:
-      - { name: Paper, icon: fas fa-file-pdf, url: "https://arxiv.org/" }
-      - { name: Code, icon: fab fa-github, url: "https://github.com/" }
-      - { name: Poster, icon: fas fa-file-powerpoint, url: "#" }
+  - title: "Tissue shear as a cue for aligning planar polarity in the developing Drosophila wing"
+    venue: Nature Communications 2025
+    authors: '<span class="me">Sara S. E. Tan</span>, David Strutt'
+    idea: Investigates how mechanical forces (tissue shear) orient planar cell polarity during organ development.
+    links: []
     bibtex: |
-      @inproceedings{one2025another,
-        title={Another Paper on Wave Mechanics},
-        author={One, Coauthor and Tan, Sara and Two, Coauthor},
-        booktitle={CVPR},
+      @article{tan2025tissue,
+        title={Tissue shear as a cue for aligning planar polarity in the developing Drosophila wing},
+        author={Tan, Sara Su Ee and Strutt, David},
+        journal={Nature Communications},
         year={2025}
       }
-  - title: "An Earlier Workshop Paper"
-    venue: ICCV Workshop 2024
-    image: prof_pic_color.png
-    authors: '<span class="me">Sara Tan</span>, Advisor Name'
-    links:
-      - { name: Paper, icon: fas fa-file-pdf, url: "https://arxiv.org/" }
+  - title: "Distinct mechanisms of planar polarization by the core and Fat-Dachsous planar polarity pathways in the Drosophila wing"
+    venue: Cell Reports 2022
+    authors: 'Alexander Brittle, Samantha J. Warrington, Helen Strutt, Elizabeth Manning, <span class="me">Sara S. E. Tan</span>, David Strutt'
+    links: []
+    bibtex: |
+      @article{brittle2022distinct,
+        title={Distinct mechanisms of planar polarization by the core and Fat-Dachsous planar polarity pathways in the Drosophila wing},
+        author={Brittle, Alexander and Warrington, Samantha J. and Strutt, Helen and Manning, Elizabeth and Tan, Sara Su Ee and Strutt, David},
+        journal={Cell Reports},
+        year={2022}
+      }
+  - title: "QuantifyPolarity, a new tool-kit for measuring planar polarized protein distributions and cell properties in developing tissues"
+    venue: Development 2021
+    authors: '<span class="me">Sara S. E. Tan</span> et al.'
+    idea: Open-source image analysis software for quantifying planar polarity and cell properties, adopted by research institutions worldwide.
+    links: []
+    bibtex: |
+      @article{tan2021quantifypolarity,
+        title={QuantifyPolarity, a new tool-kit for measuring planar polarized protein distributions and cell properties in developing tissues},
+        author={Tan, Sara Su Ee and others},
+        journal={Development},
+        year={2021}
+      }
 
-# Experience timeline (most recent first). logo is optional (falls back to icon).
+# Experience & education timeline (most recent first). logo is optional (falls back to icon).
+experience_title: Experience & Education
 experience:
-  - title: Research Intern
-    org: Company Name
-    url: "https://example.com"
-    logo:
-    icon: fas fa-building
-    period: Jun 2026 - Present
+  - title: AI Technical Engineer
+    org: Huawei Technologies R&D UK
+    url: "https://www.huawei.com/uk/"
+    icon: fas fa-microchip
+    period: 2025 - Present
     current: true
-    desc: Topic A, Topic B
-  - title: PhD Student
-    org: Your University
-    url: "https://example.com"
+    desc: Inference-time LLM reasoning, multi-agent systems for research intelligence and 3D scene reconstruction, AI technology foresight
+  - title: Postdoctoral Research Fellow
+    org: University of Sheffield
+    url: "https://www.sheffield.ac.uk/"
+    icon: fas fa-microscope
+    period: 2021 - 2025
+    desc: Wellcome Trust-funded mechanobiology research, QuantifyPolarity maintainer, "Coding for Biologists" workshop lead
+  - title: PhD in Biomedical Science
+    org: University of Sheffield
+    url: "https://www.sheffield.ac.uk/"
     icon: fas fa-graduation-cap
-    period: Sep 2025 - Present
-    desc: Advisor Name, Research Lab
-  - title: Undergraduate Researcher
-    org: Some University
-    url: "https://example.com"
-    icon: fas fa-flask
-    period: 2023 - 2025
-    desc: Topic C, Topic D
+    period: Graduated 2020
+    desc: Marie Skłodowska-Curie Actions ITN Scholar; genetics, mechanobiology, and biophysics
+  - title: MSc in Biomedical Engineering
+    org: RWTH Aachen University
+    url: "https://www.rwth-aachen.de/"
+    icon: fas fa-graduation-cap
+    period: Graduated 2015
+    desc: European Erasmus Mundus Scholar
 
 awards:
-  - { icon: "🏆", date: Mar 2026, text: "Best Paper Award, Some Workshop" }
-  - { icon: "🎁", date: Sep 2025, text: 'University Graduate Fellowship (<a href="#">link</a>)' }
-  - { icon: "🥇", date: May 2025, text: "Dean's List, Some University" }
+  - { icon: "🏆", date: 2022, text: "Women Academic Researcher Award (2022–2023)" }
+  - { icon: "🥇", date: 2019, text: "Best Research Poster" }
+  - { icon: "🎁", date: 2017, text: "Marie Skłodowska-Curie Actions ITN Scholarship" }
+  - { icon: "🎁", date: 2015, text: "European Erasmus Mundus Scholarship" }
+  - { icon: "🎁", date: 2014, text: "Huawei Scholarship" }
 
 # Number of blog posts per page in the Blog section (posts come from _posts/).
 blog_per_page: 4

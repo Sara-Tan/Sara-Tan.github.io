@@ -195,7 +195,7 @@
 
           <div class="pub-slider" id="pubSlider" tabindex="0" role="region" aria-label="Publications carousel">
             {% for pub in home.publications %}
-              <article class="pub-card">
+              <article class="pub-card{% unless pub.image %} no-image{% endunless %}">
                 {% if pub.venue -%}
                   <span class="pub-venue">{{ pub.venue }}</span>
                 {%- endif %}
@@ -243,7 +243,7 @@
         <section class="glass-card" id="experience">
           <div class="section-header">
             <div class="icon-wrapper"><i class="fas fa-laptop-code"></i></div>
-            <h2>Experience</h2>
+            <h2>{{ home.experience_title | default: 'Experience' }}</h2>
           </div>
           <div class="experience-timeline">
             {% for exp in home.experience %}

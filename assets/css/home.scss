@@ -625,6 +625,10 @@ html[data-theme="dark"] .theme-toggle .fa-moon {
   padding: 16px 18px 18px;
 }
 
+.pub-card.no-image .pub-content {
+  padding-top: 48px;
+}
+
 .pub-title {
   margin: 0;
   font-size: 1rem;
