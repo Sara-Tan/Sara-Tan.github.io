@@ -989,6 +989,12 @@ html[data-theme="dark"] .theme-toggle .fa-moon {
   background: var(--accent-soft);
 }
 
+.project-video {
+  display: block;
+  object-fit: contain;
+  background: #000;
+}
+
 .project-icon {
   display: flex;
   align-items: center;

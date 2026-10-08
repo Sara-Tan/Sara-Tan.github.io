@@ -273,7 +273,22 @@
                 {% if project.year -%}
                   <span class="pub-venue">{{ project.year }}</span>
                 {%- endif %}
-                {% if project.image %}
+                {% if project.video %}
+                  <video
+                    class="project-image project-video"
+                    {% if project.image %}
+                      poster="{{ project.image | prepend: '/assets/img/' | relative_url }}"
+                    {% endif %}
+                    muted
+                    loop
+                    playsinline
+                    controls
+                    preload="none"
+                    aria-label="{{ project.title | escape }} demo video"
+                  >
+                    <source src="{{ project.video | relative_url }}" type="video/mp4">
+                  </video>
+                {% elsif project.image %}
                   <img
                     class="project-image"
                     src="{{ project.image | prepend: '/assets/img/' | relative_url }}"

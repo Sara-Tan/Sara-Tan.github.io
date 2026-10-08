@@ -147,4 +147,19 @@
       if (e.target === figDialog) figDialog.close();
     });
   }
+
+  // Project videos: load and play only while on screen (skipped for reduced-motion users)
+  const videos = document.querySelectorAll(".project-video");
+  if (videos.length && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.play().catch(() => {});
+          else entry.target.pause();
+        });
+      },
+      { threshold: 0.4 }
+    );
+    videos.forEach((v) => io.observe(v));
+  }
 })();

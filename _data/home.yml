@@ -125,9 +125,6 @@ projects:
     year: 2025
     image: projects/research-bot.jpg
     desc: Agentic AI tool for automated literature reviews. It analyzes your query, retrieves the most relevant papers from online and offline sources, and produces structured summaries with direct citations.
-    links:
-      - { name: Website, icon: fas fa-globe, url: "https://hai-mate.github.io/research-concise/research-bot1/" }
-      - { name: Try it, icon: fas fa-rocket, url: "https://research-concise-app.streamlit.app/" }
   - title: QuantifyPolarity, a Biological Image Analysis Software
     year: 2021
     image: projects/quantifypolarity.jpg
@@ -139,6 +136,7 @@ projects:
   - title: Automated Cell Segmentation and Tracking Toolkit with Machine Learning
     year: 2018
     image: projects/cell-tracking.jpg
+    video: /assets/video/cell-tracking.mp4
     desc: Automated real-time cell segmentation and tracking graphical user interface (GUI) for quantitative analysis.
   - title: FibrosisQuant, Automated Quantification of Cystic Fibrosis
     year: 2016
