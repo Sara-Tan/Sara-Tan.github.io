@@ -91,7 +91,8 @@ publications:
     venue: Development 2021
     authors: '<span class="me">Sara S. E. Tan</span> et al.'
     idea: Open-source image analysis software for quantifying planar polarity and cell properties, adopted by research institutions worldwide.
-    links: []
+    links:
+      - { name: Paper, icon: fas fa-file-pdf, url: "https://doi.org/10.1242/dev.198952" }
     bibtex: |
       @article{tan2021quantifypolarity,
         title={QuantifyPolarity, a new tool-kit for measuring planar polarized protein distributions and cell properties in developing tissues},
@@ -99,6 +100,41 @@ publications:
         journal={Development},
         year={2021}
       }
+
+# Selected projects grid. image is relative to assets/img/ (falls back to icon).
+projects:
+  - title: Research-Bot
+    year: 2025
+    icon: fas fa-robot
+    desc: Agentic AI tool for automated literature reviews that maps research landscapes and identifies gaps.
+    links:
+      - { name: Website, icon: fas fa-globe, url: "https://hai-mate.github.io/research-concise/research-bot1/" }
+  - title: QuantifyPolarity, a Biological Image Analysis Software
+    year: 2021
+    image: projects/quantifypolarity.jpg
+    desc: Automatically quantifies protein distribution and cellular properties in developing tissues. Widely adopted by research institutions around the world and cited in numerous peer-reviewed publications.
+    links:
+      - { name: Paper, icon: fas fa-file-pdf, url: "https://doi.org/10.1242/dev.198952" }
+  - title: Automated Cell Segmentation and Tracking Toolkit with Machine Learning
+    year: 2018
+    image: projects/cell-tracking.jpg
+    desc: Automated real-time cell segmentation and tracking graphical user interface (GUI) for quantitative analysis.
+  - title: FibrosisQuant, Automated Quantification of Cystic Fibrosis
+    year: 2016
+    image: projects/fibrosisquant.jpg
+    desc: A robust yet user-friendly GUI for automated quantification of cystic fibrosis in human lung cell specimens.
+  - title: Automated Protein Tracking and Quantification GUI
+    year: 2015
+    image: projects/protein-tracking.jpg
+    desc: An automated GUI for tracking and quantification of the morphology and dynamics of protein over time.
+  - title: MRI Brain Tumor Detection Graphical User Interface
+    year: 2013
+    image: projects/mri-brain-tumor.jpg
+    desc: Medical imaging computer-aided diagnostic GUI for visualization and automated detection of brain tumor in MRI scans.
+  - title: Automated Temperature Controller GUI for Forced Air Warming System
+    year: 2013
+    image: projects/temperature-controller.jpg
+    desc: Real-time monitoring and automated control of a patient's body temperature, adjusting a connected heating system to reach the target temperature.
 
 # Experience & education timeline (most recent first). logo is optional (falls back to icon).
 experience_title: Experience & Education
@@ -135,8 +171,5 @@ awards:
   - { icon: "🎁", date: 2017, text: "Marie Skłodowska-Curie Actions ITN Scholarship" }
   - { icon: "🎁", date: 2015, text: "European Erasmus Mundus Scholarship" }
   - { icon: "🎁", date: 2014, text: "Huawei Scholarship" }
-
-# Number of blog posts per page in the Blog section (posts come from _posts/).
-blog_per_page: 4
 
 footer: Built with <i class="fas fa-heart"></i> using Jekyll.

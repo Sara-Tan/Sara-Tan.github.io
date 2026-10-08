@@ -152,39 +152,4 @@
       });
     });
   }
-
-  // Blog pagination
-  const blogList = document.getElementById("blogList");
-  if (blogList) {
-    const items = Array.from(blogList.querySelectorAll(".blog-item"));
-    const perPage = parseInt(blogList.dataset.perPage, 10) || 4;
-    const pages = Math.ceil(items.length / perPage);
-    const bPrev = document.getElementById("blogPrev");
-    const bNext = document.getElementById("blogNext");
-    const info = document.getElementById("blogPageInfo");
-    let page = 0;
-
-    function render() {
-      items.forEach((item, i) => {
-        item.hidden = Math.floor(i / perPage) !== page;
-      });
-      bPrev.disabled = page === 0;
-      bNext.disabled = page >= pages - 1;
-      info.textContent = "Page " + (page + 1) + " of " + pages;
-    }
-
-    if (pages <= 1) {
-      document.getElementById("blogPagination").hidden = true;
-    } else {
-      bPrev.addEventListener("click", () => {
-        page = Math.max(0, page - 1);
-        render();
-      });
-      bNext.addEventListener("click", () => {
-        page = Math.min(pages - 1, page + 1);
-        render();
-      });
-      render();
-    }
-  }
 })();

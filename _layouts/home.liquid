@@ -66,14 +66,14 @@
           {% if home.publications.size > 0 -%}
             <a href="#publications" class="navbar-link"><i class="fas fa-file-alt"></i> Publications</a>
           {%- endif %}
+          {% if home.projects.size > 0 -%}
+            <a href="#projects" class="navbar-link"><i class="fas fa-diagram-project"></i> Projects</a>
+          {%- endif %}
           {% if home.experience.size > 0 -%}
             <a href="#experience" class="navbar-link"><i class="fas fa-briefcase"></i> Experience</a>
           {%- endif %}
           {% if home.awards.size > 0 -%}
             <a href="#awards" class="navbar-link"><i class="fas fa-trophy"></i> Awards</a>
-          {%- endif %}
-          {% if site.posts.size > 0 -%}
-            <a href="#blog" class="navbar-link"><i class="fas fa-pen-fancy"></i> Blog</a>
           {%- endif %}
           {% if home.cv_url %}
             <a href="{{ home.cv_url | relative_url }}" class="navbar-link"><i class="fas fa-file-lines"></i> CV</a>
@@ -238,6 +238,53 @@
         </section>
       {% endif %}
 
+      <!-- Projects -->
+      {% if home.projects.size > 0 %}
+        <section class="glass-card" id="projects">
+          <div class="section-header">
+            <div class="icon-wrapper"><i class="fas fa-diagram-project"></i></div>
+            <h2>Selected Projects</h2>
+          </div>
+          <div class="project-grid">
+            {% for project in home.projects %}
+              <article class="project-card">
+                {% if project.year -%}
+                  <span class="pub-venue">{{ project.year }}</span>
+                {%- endif %}
+                {% if project.image %}
+                  <img
+                    class="project-image"
+                    src="{{ project.image | prepend: '/assets/img/' | relative_url }}"
+                    alt="{{ project.title | escape }} screenshot"
+                    loading="lazy"
+                  >
+                {% else %}
+                  <div class="project-image project-icon" aria-hidden="true">
+                    <i class="{{ project.icon | default: 'fas fa-code' }}"></i>
+                  </div>
+                {% endif %}
+                <div class="pub-content">
+                  <h3 class="pub-title">{{ project.title }}</h3>
+                  {% if project.desc %}
+                    <p class="project-desc">{{ project.desc }}</p>
+                  {% endif %}
+                  {% if project.links.size > 0 %}
+                    <div class="pub-links">
+                      {% for link in project.links %}
+                        <a href="{{ link.url }}" class="pub-link" target="_blank" rel="noopener noreferrer">
+                          {%- if link.icon %}<i class="{{ link.icon }}"></i> {% endif -%}
+                          {{- link.name -}}
+                        </a>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+
       <!-- Experience -->
       {% if home.experience.size > 0 %}
         <section class="glass-card" id="experience">
@@ -298,40 +345,6 @@
                 <span class="award-text">{{ award.text }}</span>
               </div>
             {% endfor %}
-          </div>
-        </section>
-      {% endif %}
-
-      <!-- Blog -->
-      {% if site.posts.size > 0 %}
-        <section class="glass-card" id="blog">
-          <div class="section-header">
-            <div class="icon-wrapper"><i class="fas fa-pen-fancy"></i></div>
-            <h2>Blog Posts</h2>
-            <a class="section-more" href="{{ '/blog/' | relative_url }}">All posts <i class="fas fa-arrow-right"></i></a>
-          </div>
-          <div class="blog-list" id="blogList" data-per-page="{{ home.blog_per_page | default: 4 }}">
-            {% for post in site.posts %}
-              {% if post.redirect == blank %}
-                {% assign post_url = post.url | relative_url %}
-              {% elsif post.redirect contains '://' %}
-                {% assign post_url = post.redirect %}
-              {% else %}
-                {% assign post_url = post.redirect | relative_url %}
-              {% endif %}
-              <a class="blog-item" href="{{ post_url }}">
-                <span class="blog-date">{{ post.date | date: '%b %d, %Y' }}</span>
-                <span class="blog-title">{{ post.title }}</span>
-                {% if post.description -%}
-                  <span class="blog-desc">{{ post.description }}</span>
-                {%- endif %}
-              </a>
-            {% endfor %}
-          </div>
-          <div class="blog-pagination" id="blogPagination">
-            <button type="button" class="pagination-btn" id="blogPrev"><i class="fas fa-chevron-left"></i> Previous</button>
-            <span class="pagination-info" id="blogPageInfo"></span>
-            <button type="button" class="pagination-btn" id="blogNext">Next <i class="fas fa-chevron-right"></i></button>
           </div>
         </section>
       {% endif %}
