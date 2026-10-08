@@ -3,7 +3,7 @@
 # Images are relative to assets/img/. Icons are Font Awesome 6 classes (https://fontawesome.com/icons).
 
 profile:
-  image: prof_pic.jpg
+  image: sara_tan.jpg
   badge: AI Engineer
   tags:
     - { icon: fas fa-building, text: Huawei R&D UK }
@@ -56,36 +56,43 @@ publications:
     venue: NeurIPS 2026 Workshop
     authors: '<span class="me">Sara S. E. Tan</span> et al.'
     idea: A decoding method that steers the model towards better answers using contrastive prompts, with no retraining or reward models.
-    links: []
+    links:
+      - { name: arXiv, icon: fas fa-file-pdf, url: "https://arxiv.org/abs/2609.37041" }
     bibtex: |
       @inproceedings{tan2026beam,
         title={Beam Search as Test-Time Self-Distillation via Counterfactual Contexts},
         author={Tan, Sara Su Ee and others},
         booktitle={NeurIPS Workshop on Towards Test-Time Continual Learning Agents},
-        year={2026}
+        year={2026},
+        eprint={2609.37041},
+        archivePrefix={arXiv}
       }
   - title: "Tissue shear as a cue for aligning planar polarity in the developing Drosophila wing"
     venue: Nature Communications 2025
     authors: '<span class="me">Sara S. E. Tan</span>, David Strutt'
     idea: Investigates how mechanical forces (tissue shear) orient planar cell polarity during organ development.
-    links: []
+    links:
+      - { name: Paper, icon: fas fa-file-pdf, url: "https://doi.org/10.1038/s41467-025-56744-7" }
     bibtex: |
       @article{tan2025tissue,
         title={Tissue shear as a cue for aligning planar polarity in the developing Drosophila wing},
         author={Tan, Sara Su Ee and Strutt, David},
         journal={Nature Communications},
-        year={2025}
+        year={2025},
+        doi={10.1038/s41467-025-56744-7}
       }
   - title: "Distinct mechanisms of planar polarization by the core and Fat-Dachsous planar polarity pathways in the Drosophila wing"
     venue: Cell Reports 2022
     authors: 'Alexander Brittle, Samantha J. Warrington, Helen Strutt, Elizabeth Manning, <span class="me">Sara S. E. Tan</span>, David Strutt'
-    links: []
+    links:
+      - { name: Paper, icon: fas fa-file-pdf, url: "https://doi.org/10.1016/j.celrep.2022.111419" }
     bibtex: |
       @article{brittle2022distinct,
         title={Distinct mechanisms of planar polarization by the core and Fat-Dachsous planar polarity pathways in the Drosophila wing},
         author={Brittle, Alexander and Warrington, Samantha J. and Strutt, Helen and Manning, Elizabeth and Tan, Sara Su Ee and Strutt, David},
         journal={Cell Reports},
-        year={2022}
+        year={2022},
+        doi={10.1016/j.celrep.2022.111419}
       }
   - title: "QuantifyPolarity, a new tool-kit for measuring planar polarized protein distributions and cell properties in developing tissues"
     venue: Development 2021
@@ -98,17 +105,12 @@ publications:
         title={QuantifyPolarity, a new tool-kit for measuring planar polarized protein distributions and cell properties in developing tissues},
         author={Tan, Sara Su Ee and others},
         journal={Development},
-        year={2021}
+        year={2021},
+        doi={10.1242/dev.198952}
       }
 
 # Selected projects grid. image is relative to assets/img/ (falls back to icon).
 projects:
-  - title: Research-Bot
-    year: 2025
-    icon: fas fa-robot
-    desc: Agentic AI tool for automated literature reviews that maps research landscapes and identifies gaps.
-    links:
-      - { name: Website, icon: fas fa-globe, url: "https://hai-mate.github.io/research-concise/research-bot1/" }
   - title: QuantifyPolarity, a Biological Image Analysis Software
     year: 2021
     image: projects/quantifypolarity.jpg
