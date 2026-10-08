@@ -61,7 +61,7 @@ news:
   - icon: "🎓"
     date: 2020
     text: >-
-      Awarded a PhD in Biomedical Science by the University of Sheffield, supported by a <span class="highlight">Marie Skłodowska-Curie Actions ITN Scholarship</span>.
+      Awarded a PhD in Biomedical Science by the <span class="highlight">The University of Sheffield</span> supported by a <span class="highlight">Marie Skłodowska-Curie Actions ITN Scholarship</span>.
 
 # Publications are shown as a horizontal card slider.
 # authors: HTML allowed; wrap your own name in <span class="me">...</span>.
@@ -81,6 +81,8 @@ publications:
         caption: "Figure 1: Inference efficiency of (a) Qwen2.5-7B and (b) DeepSeek-Math-7B-Instruct on MATH500."
       - src: publications/neurips26-fig4.jpg
         caption: "Figure 4: Pass@k on MATH500 for power sampling (PS), standard beam search (BS) and contrastive beam search (CBS), DeepSeek-Math-7B-Instruct."
+      - src: publications/neurips26-fig5.jpg
+        caption: "Figure 5: Best-of-16 accuracy for ten contrastive context pairs on MATH500, HumanEval and GPQA (Qwen2.5-7B)."
     bibtex: |
       @inproceedings{tan2026beam,
         title={Beam Search as Test-Time Self-Distillation via Counterfactual Contexts},
@@ -191,25 +193,25 @@ experience:
     url: "https://www.sheffield.ac.uk/"
     icon: fas fa-microscope
     period: 2021 - 2025
-    desc: Wellcome Trust-funded mechanobiology research, QuantifyPolarity maintainer, "Coding for Biologists" workshop lead
+    desc: Wellcome Trust-funded mechanobiology research, QuantifyPolarity software maintainer, "Coding for Biologists" workshop lead
   - title: PhD in Biomedical Science
     org: University of Sheffield
     url: "https://www.sheffield.ac.uk/"
     icon: fas fa-graduation-cap
     period: Graduated 2020
-    desc: Marie Skłodowska-Curie Actions ITN Scholar; genetics, mechanobiology, and biophysics
+    desc: Marie Skłodowska-Curie Actions ITN Scholar; Genetics, Mechanobiology, and Biophysics
   - title: MSc in Biomedical Engineering
     org: RWTH Aachen University
     url: "https://www.rwth-aachen.de/"
     icon: fas fa-graduation-cap
     period: Graduated 2015
-    desc: European Erasmus Mundus Scholar
+    desc: European Erasmus Mundus Scholar; Focus on Biomedical Engineering and Translational Research.
 
 awards:
   - { icon: "🏆", date: 2022, text: "Women Academic Researcher Award (2022–2023)" }
   - { icon: "🥇", date: 2019, text: "Best Research Poster" }
-  - { icon: "🎁", date: 2017, text: "Marie Skłodowska-Curie Actions ITN Scholarship" }
-  - { icon: "🎁", date: 2015, text: "European Erasmus Mundus Scholarship" }
-  - { icon: "🎁", date: 2014, text: "Huawei Scholarship" }
+  - { icon: "🏆", date: 2017, text: "Marie Skłodowska-Curie Actions ITN Scholarship" }
+  - { icon: "🏆", date: 2015, text: "European Erasmus Mundus Scholarship" }
+  - { icon: "🏆", date: 2014, text: "Huawei Scholarship" }
 
 footer: Built with <i class="fas fa-heart"></i> using Jekyll.
