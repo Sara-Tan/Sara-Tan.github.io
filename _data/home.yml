@@ -111,6 +111,13 @@ publications:
 
 # Selected projects grid. image is relative to assets/img/ (falls back to icon).
 projects:
+  - title: Research-Bot
+    year: 2025
+    image: projects/research-bot.jpg
+    desc: Agentic AI tool for automated literature reviews. It analyzes your query, retrieves the most relevant papers from online and offline sources, and produces structured summaries with direct citations.
+    links:
+      - { name: Website, icon: fas fa-globe, url: "https://hai-mate.github.io/research-concise/research-bot1/" }
+      - { name: Try it, icon: fas fa-rocket, url: "https://research-concise-app.streamlit.app/" }
   - title: QuantifyPolarity, a Biological Image Analysis Software
     year: 2021
     image: projects/quantifypolarity.jpg
@@ -133,10 +140,6 @@ projects:
     year: 2013
     image: projects/mri-brain-tumor.jpg
     desc: Medical imaging computer-aided diagnostic GUI for visualization and automated detection of brain tumor in MRI scans.
-  - title: Automated Temperature Controller GUI for Forced Air Warming System
-    year: 2013
-    image: projects/temperature-controller.jpg
-    desc: Real-time monitoring and automated control of a patient's body temperature, adjusting a connected heating system to reach the target temperature.
 
 # Experience & education timeline (most recent first). logo is optional (falls back to icon).
 experience_title: Experience & Education
