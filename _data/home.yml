@@ -147,7 +147,7 @@ projects:
     image: projects/protein-tracking.jpg
     desc: An automated GUI for tracking and quantification of the morphology and dynamics of protein over time.
   - title: MRI Brain Tumor Detection Graphical User Interface
-    year: 2013
+    year: 2014
     image: projects/mri-brain-tumor.jpg
     desc: Medical imaging computer-aided diagnostic GUI for visualization and automated detection of brain tumor in MRI scans.
 
