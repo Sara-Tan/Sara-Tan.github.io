@@ -61,7 +61,7 @@
             </button>
           </div>
           {% if home.news.size > 0 -%}
-            <a href="#news" class="navbar-link"><i class="fas fa-rss"></i> News</a>
+            <a href="#news" class="navbar-link"><i class="fas fa-star"></i> Highlights</a>
           {%- endif %}
           {% if home.publications.size > 0 -%}
             <a href="#publications" class="navbar-link"><i class="fas fa-file-alt"></i> Publications</a>
@@ -150,8 +150,8 @@
         {% assign news_visible = home.news_visible | default: 5 %}
         <section class="glass-card" id="news">
           <div class="section-header">
-            <div class="icon-wrapper"><i class="fas fa-bullhorn"></i></div>
-            <h2>Latest News</h2>
+            <div class="icon-wrapper"><i class="fas fa-star"></i></div>
+            <h2>Highlights</h2>
           </div>
           <div class="news-list" id="newsList">
             {% for item in home.news %}
