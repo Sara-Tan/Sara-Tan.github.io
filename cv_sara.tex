@@ -1,0 +1,150 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1.6cm]{geometry}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{pdfrender}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlist[itemize]{
+  leftmargin=1.4em,
+  itemsep=0.2em,
+  topsep=0.25em,
+  parsep=0pt
+}
+
+\definecolor{heading}{HTML}{1F4E79}
+\newcommand{\cvsection}[1]{%
+  \vspace{0.8em}%
+  {\large\bfseries\color{heading}#1}\par
+  \vspace{-0.35em}%
+  {\color{heading}\rule{\textwidth}{0.6pt}}\par
+  \vspace{0.1em}%
+}
+\newcommand{\contactsep}{\quad$\blacklozenge$\quad}
+% White fill with dark blue outline
+\newcommand{\cvicon}[1]{\textpdfrender{TextRenderingMode=FillStroke,LineWidth=0.5pt,FillColor=white,StrokeColor=heading}{#1}\ }
+\newcommand{\entry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}Xr@{}}
+    \textbf{#1} & \textbf{#2} \\
+    \textit{#3} & \textit{#4}
+  \end{tabularx}
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries Sara Su Ee Tan}\par
+  \vspace{0.35em}
+  \cvicon{\faEnvelope}\href{mailto:stan.suee@gmail.com}{stan.suee@gmail.com}
+  \qquad
+  \cvicon{\faPhone}+44 7401 053196
+  \qquad
+  \cvicon{\faHome}London, UK
+  \qquad
+  \cvicon{\faPassport}UK (ILR) holder\par
+  \vspace{0.2em}
+  \cvicon{\faLinkedin}\href{https://www.linkedin.com/in/sara-se-tan1/}{linkedin.com/in/sara-se-tan1}
+  \qquad
+  \cvicon{\faGithub}\href{https://Sara-Tan.github.io}{Sara-Tan.github.io}
+\end{center}
+
+\cvsection{SUMMARY}
+
+PhD-trained biomedical scientist turned AI Engineer, combining seven years of life sciences research with LLM research and multi-agent system development.
+At the University of Sheffield, I researched genetics, mechanobiology, and biophysics, leading projects funded by Marie Skłodowska-Curie and the Wellcome Trust (first-author papers in \textit{Nature Communications} and \textit{Development}).
+
+At Huawei Technologies R\&D UK, I research inference-time LLM reasoning (first-author \textit{NeurIPS TTLC 2026 workshop}) and build agentic systems for research intelligence and 3D scene reconstruction.
+
+Across my academic career, I built six tools to automate life sciences workflows, including the open-source \textit{QuantifyPolarity} (200+ downloads).
+
+I have authored several peer-reviewed papers and reviewed for \textit{Development}, \textit{Cell Reports}, NeurIPS workshops, and ICLR.
+
+\cvsection{SKILLS}
+
+{\centering\textbf{\textit{Technical \& Analytical}}\par}
+
+\textbf{LLMs \& Agents:} Multi-agent architectures, RAG, MCP, inference-time optimization \textit{(LangGraph, Hugging Face, vLLM, CrewAI)}
+
+\textbf{Life Sciences:} Developmental biology, mechanobiology, genetics, molecular biology, quantitative image analysis, scientific software development
+
+\textbf{Programming \& Data:} Python (PyTorch, pandas, Matplotlib), MATLAB, Streamlit, Git; statistics and data analysis
+
+{\centering\textbf{\textit{Strategic \& Business}}\par}
+
+\textbf{Research Project Management:} Scientific research proposals, grant acquisition, experimental design, and execution
+
+\textbf{Business Strategy:} MBA Essentials (London School of Economics), Strategic Management (Copenhagen Business School)
+
+{\centering\textbf{\textit{Communication}}\par}
+
+\textbf{Communication:} Scientific writing (reports, academic papers, and grants); presentations; teaching
+
+\textbf{Languages:} English (full proficiency), Mandarin (bilingual proficiency), German (basic proficiency)
+
+\cvsection{WORK EXPERIENCE}
+
+\entry{Huawei Technologies R\&D UK}{London, UK}{AI Technical Engineer}{2025--present}
+\begin{itemize}
+   \item Conducted research on inference-time LLM reasoning, developing \textit{test-time self-distillation}: a decoding method that steers the model towards better answers using contrastive prompts, with no retraining/reward models. Improved performance on maths, coding, and graduate-level science benchmarks across model scales (first-author paper, \textit{NeurIPS 2026 Workshop}).
+  \item Building a multi-agent workflow that performs 3D scene reconstruction from natural-language user queries.
+  \item Designed and deployed internal agentic tools to scale the team's technology intelligence: a literature-review agent that maps research landscapes and identifies gaps, and a news agent that curates and analyzes daily industry developments, reducing manual research effort and informing strategic decisions.
+  \item Led AI technology foresight, tracking frontier AI research and turning it into actionable recommendations that informed product and research priorities.
+  \item Assessed existing product lines to identify AI capability gaps and opportunities, scoping new initiatives with clear objectives.
+\end{itemize}
+
+\entry{University of Sheffield}{Sheffield, UK}{Postdoctoral Research Fellow}{2021--2025}
+\begin{itemize}
+  \item Led a Wellcome Trust-funded project investigating how mechanical forces influence organ development, combining genetics, microscopy, and computational image analysis; published as first author in \textit{Nature Communications} (2025).
+  \item Drove the full project lifecycle, from ideation and planning to analysis, publication, and funding proposals, ahead of schedule.
+  \item Maintained the open-source \textit{QuantifyPolarity} software, writing documentation and tutorials, supporting users, and releasing upgrades.
+  \item Supervised research technicians and postgraduate students, contributing to talent development and project success.
+  \item Initiated and led a ``Coding for Biologists'' workshop series, improving programming and data analysis capabilities among biologists.
+\end{itemize}
+
+\cvsection{SELECTED PUBLICATIONS}
+
+\begin{enumerate}[leftmargin=1.6em, itemsep=0.25em, topsep=0.25em]
+  \item \textbf{Tan, S. E.} et al. (2026). ``Beam Search as Test-Time Self-Distillation via Counterfactual Contexts.'' \textit{NeurIPS Workshop on Towards Test-Time Continual Learning Agents}.
+  \item \textbf{Tan, S. E.}, \& Strutt, D. (2025). ``Tissue shear as a cue for aligning planar polarity in the developing \textit{Drosophila} wing.'' \textit{Nature Communications}.
+  \item Brittle, A., Warrington, S. J., Strutt, H., Manning, E., \textbf{Tan, S. E.}, \& Strutt, D. (2022). ``Distinct mechanisms of planar polarization by the core and Fat-Dachsous planar polarity pathways in the \textit{Drosophila} wing.'' \textit{Cell Reports}.
+  \item \textbf{Tan, S. E.} et al. (2021). ``QuantifyPolarity, a new tool-kit for measuring planar polarized protein distributions and cell properties in developing tissues.'' \textit{Development}.
+\end{enumerate}
+
+\cvsection{EDUCATION}
+
+\entry{University of Sheffield}{Sheffield, UK}{Doctor of Philosophy in Biomedical Science}{2020}
+\entry{RWTH Aachen University}{Aachen, Germany}{Master of Science in Biomedical Engineering}{2015}
+
+\cvsection{AWARDS \& SCHOLARSHIPS}
+
+\begin{itemize}
+  \item Women Academic Researcher Award (2022--2023)
+  \item Best Research Poster (2019)
+  \item Marie Skłodowska-Curie Actions ITN Scholarship (2017)
+  \item European Erasmus Mundus Scholarship (2015)
+  \item Huawei Scholarship (2014)
+\end{itemize}
+
+\phantomsection\label{sec:projects}
+\cvsection{SELECTED PROJECTS}
+
+\begin{itemize}
+  \item \textbf{Research-Bot (2025):} Agentic AI tool for automated literature reviews.
+  \item \textbf{QuantifyPolarity (2019):} Open-source image analysis software, adopted and cited by research institutions worldwide.
+  \item \textbf{Automated Cell Tracking (2018):} Machine-learning GUI for live-cell segmentation, tracking, and counting.
+  \item \textbf{Cystic Fibrosis Quantification (2016):} GUI for automated fibrosis quantification in lung-cell microscopy images.
+  \item \textbf{Focal Adhesion Tracking (2015):} Automated tracking of protein morphology and dynamics over time.
+  \item \textbf{Pathological Brain Detection (2014):} Computer-aided diagnostic GUI for classifying pathological brain images.
+\end{itemize}
+
+\end{document}

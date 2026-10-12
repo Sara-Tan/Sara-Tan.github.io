@@ -48,20 +48,11 @@ news:
     date: 2022
     text: >-
       Co-authored <a href="https://doi.org/10.1016/j.celrep.2022.111419">study</a> on the genetic mechanisms of the organ development, published in <span class="venue">Cell Reports</span>.
-  - icon: "🔬"
-    date: 2021
-    text: >-
-      Began a <span class="highlight">Wellcome Trust-funded</span> Postdoctoral Research Fellowship at the University of Sheffield, investigating
-      how mechanical forces shape organ development.
   - icon: "🛠️"
     date: 2021
     text: >-
       Released <a href="https://doi.org/10.1242/dev.198952"><em>QuantifyPolarity</em></a>, an open-source toolkit for quantifying proteins and
       cell morphology, published in <span class="venue">Development</span>.
-  - icon: "🎓"
-    date: 2020
-    text: >-
-      Awarded a PhD in Biomedical Science by the <span class="highlight">The University of Sheffield</span> supported by a <span class="highlight">Marie Skłodowska-Curie Actions ITN Scholarship</span>.
 
 # Publications are shown as a horizontal card slider.
 # authors: HTML allowed; wrap your own name in <span class="me">...</span>.
@@ -165,26 +156,23 @@ experience:
     org: University of Sheffield
     url: "https://www.sheffield.ac.uk/"
     icon: fas fa-microscope
-    period: 2021 - 2025
     desc: Wellcome Trust-funded mechanobiology research, QuantifyPolarity software maintainer, "Coding for Biologists" workshop lead
   - title: PhD in Biomedical Science
     org: University of Sheffield
     url: "https://www.sheffield.ac.uk/"
     icon: fas fa-graduation-cap
-    period: Graduated 2020
     desc: Marie Skłodowska-Curie Actions ITN Scholar; Genetics, Mechanobiology, and Biophysics
   - title: MSc in Biomedical Engineering
     org: RWTH Aachen University
     url: "https://www.rwth-aachen.de/"
     icon: fas fa-graduation-cap
-    period: Graduated 2015
     desc: European Erasmus Mundus Scholar; Focus on Biomedical Engineering and Translational Research.
 
 awards:
-  - { icon: "🏆", date: 2022, text: "Women Academic Researcher Award (2022–2023)" }
-  - { icon: "🥇", date: 2019, text: "Best Research Poster" }
-  - { icon: "🏆", date: 2017, text: "Marie Skłodowska-Curie Actions ITN Scholarship" }
-  - { icon: "🏆", date: 2015, text: "European Erasmus Mundus Scholarship" }
-  - { icon: "🏆", date: 2014, text: "Huawei Scholarship" }
+  - { icon: "🏆", text: "Women Academic Researcher Award (2022–2023)" }
+  - { icon: "🥇", text: "Best Research Poster" }
+  - { icon: "🏆", text: "Marie Skłodowska-Curie Actions ITN Scholarship" }
+  - { icon: "🏆", text: "European Erasmus Mundus Scholarship" }
+  - { icon: "🏆", text: "Huawei Scholarship" }
 
 footer: Built with <i class="fas fa-heart"></i> using Jekyll.
