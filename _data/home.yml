@@ -87,7 +87,7 @@ publications:
         caption: "Fig. 8f: Model of how tissue stress anisotropy drives a gradient of cell flow, destabilising core proteins and aligning proximal-distal polarity."
   - title: "Distinct mechanisms of planar polarization by the core and Fat-Dachsous planar polarity pathways in the Drosophila wing"
     venue: Cell Reports 2022
-    authors: 'Alexander Brittle, Samantha J. Warrington, Helen Strutt, Elizabeth Manning, <span class="me">Sara S. E. Tan</span>, David Strutt'
+    authors: 'Amy Brittle, Samantha J. Warrington, Helen Strutt, Elizabeth Manning, <span class="me">Sara S. E. Tan</span>, David Strutt'
     links:
       - { name: Paper, icon: fas fa-file-pdf, url: "https://doi.org/10.1016/j.celrep.2022.111419" }
     figure_source: Brittle et al., Cell Reports (2022), open access
