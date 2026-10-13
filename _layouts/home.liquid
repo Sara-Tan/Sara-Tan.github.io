@@ -66,11 +66,11 @@
           {% if home.publications.size > 0 -%}
             <a href="#publications" class="navbar-link"><i class="fas fa-file-alt"></i> Publications</a>
           {%- endif %}
-          {% if home.projects.size > 0 -%}
-            <a href="#projects" class="navbar-link"><i class="fas fa-diagram-project"></i> Projects</a>
-          {%- endif %}
           {% if home.experience.size > 0 -%}
             <a href="#experience" class="navbar-link"><i class="fas fa-briefcase"></i> Experience</a>
+          {%- endif %}
+          {% if home.projects.size > 0 -%}
+            <a href="#projects" class="navbar-link"><i class="fas fa-diagram-project"></i> Projects</a>
           {%- endif %}
           {% if home.awards.size > 0 -%}
             <a href="#awards" class="navbar-link"><i class="fas fa-trophy"></i> Awards</a>
@@ -260,6 +260,51 @@
         </section>
       {% endif %}
 
+      <!-- Experience -->
+      {% if home.experience.size > 0 %}
+        <section class="glass-card" id="experience">
+          <div class="section-header">
+            <div class="icon-wrapper"><i class="fas fa-laptop-code"></i></div>
+            <h2>{{ home.experience_title | default: 'Experience' }}</h2>
+          </div>
+          <div class="experience-timeline">
+            {% for exp in home.experience %}
+              <article class="experience-item{% if exp.current %} is-current{% endif %}">
+                <div class="experience-marker" aria-hidden="true"><span></span></div>
+                <div class="experience-card">
+                  <div class="experience-header">
+                    <div class="experience-logo">
+                      {% if exp.logo %}
+                        <img src="{{ exp.logo | prepend: '/assets/img/' | relative_url }}" alt="{{ exp.org | escape }}">
+                      {% else %}
+                        <i class="{{ exp.icon | default: 'fas fa-briefcase' }}"></i>
+                      {% endif %}
+                    </div>
+                    <div>
+                      <div class="experience-period">
+                        {{ exp.period }}
+                        {% if exp.current -%}
+                          <span class="experience-current">Current</span>
+                        {%- endif %}
+                      </div>
+                      <h3 class="experience-title">{{ exp.title }}</h3>
+                      {% if exp.url %}
+                        <a class="experience-org" href="{{ exp.url }}" target="_blank" rel="noopener noreferrer">{{ exp.org }}</a>
+                      {% else %}
+                        <span class="experience-org">{{ exp.org }}</span>
+                      {% endif %}
+                    </div>
+                  </div>
+                  {% if exp.desc %}
+                    <p class="experience-desc">{{ exp.desc }}</p>
+                  {% endif %}
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+
       <!-- Projects -->
       {% if home.projects.size > 0 %}
         <section class="glass-card" id="projects">
@@ -312,51 +357,6 @@
                         </a>
                       {% endfor %}
                     </div>
-                  {% endif %}
-                </div>
-              </article>
-            {% endfor %}
-          </div>
-        </section>
-      {% endif %}
-
-      <!-- Experience -->
-      {% if home.experience.size > 0 %}
-        <section class="glass-card" id="experience">
-          <div class="section-header">
-            <div class="icon-wrapper"><i class="fas fa-laptop-code"></i></div>
-            <h2>{{ home.experience_title | default: 'Experience' }}</h2>
-          </div>
-          <div class="experience-timeline">
-            {% for exp in home.experience %}
-              <article class="experience-item{% if exp.current %} is-current{% endif %}">
-                <div class="experience-marker" aria-hidden="true"><span></span></div>
-                <div class="experience-card">
-                  <div class="experience-header">
-                    <div class="experience-logo">
-                      {% if exp.logo %}
-                        <img src="{{ exp.logo | prepend: '/assets/img/' | relative_url }}" alt="{{ exp.org | escape }}">
-                      {% else %}
-                        <i class="{{ exp.icon | default: 'fas fa-briefcase' }}"></i>
-                      {% endif %}
-                    </div>
-                    <div>
-                      <div class="experience-period">
-                        {{ exp.period }}
-                        {% if exp.current -%}
-                          <span class="experience-current">Current</span>
-                        {%- endif %}
-                      </div>
-                      <h3 class="experience-title">{{ exp.title }}</h3>
-                      {% if exp.url %}
-                        <a class="experience-org" href="{{ exp.url }}" target="_blank" rel="noopener noreferrer">{{ exp.org }}</a>
-                      {% else %}
-                        <span class="experience-org">{{ exp.org }}</span>
-                      {% endif %}
-                    </div>
-                  </div>
-                  {% if exp.desc %}
-                    <p class="experience-desc">{{ exp.desc }}</p>
                   {% endif %}
                 </div>
               </article>
